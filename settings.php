@@ -31,6 +31,8 @@ function register_snillrik_settings_settings()
     register_setting('snillrik-settings-group', 'snillrik_settings_turnoffxmlrpc');
 	register_setting('snillrik-settings-group', 'snillrik_settings_redirectlogin');
 	register_setting('snillrik-settings-group', 'snillrik_settings_redirectlogin_page');
+	register_setting('snillrik-settings-group', 'snillrik_settings_wootocheckout');
+	register_setting('snillrik-settings-group', 'snillrik_settings_wootocheckout2');
 }
 
 /**
@@ -58,7 +60,9 @@ function snillrik_settings_page()
     $turnoffxmlrpc = get_option('snillrik_settings_turnoffxmlrpc', array());
     $redirectlogin = get_option('snillrik_settings_redirectlogin', array());
     $snillrik_settings_redirectlogin_page = get_option('snillrik_settings_redirectlogin_page', "");
-
+	$snillrik_settings_wootocheckout = get_option('snillrik_settings_wootocheckout', "");
+	$snillrik_settings_wootocheckout2 = get_option('snillrik_settings_wootocheckout2', "");
+	
     ?>
 
 	<div class="snillrik-settings-main">
@@ -152,6 +156,26 @@ function snillrik_settings_page()
 				</label>
 				</div>
 			</div>
+			
+			<div class="snillrik-settings-item">
+				<div class="snillrik-settings-item-inner">
+				<h3>WooCommerce</h3>
+				<p>Redirect to Checkout after "add to cart"</p>
+				<?php if(class_exists( 'woocommerce' )): ?>
+    			<label class="switch">
+  					<input type="checkbox" <?php echo $snillrik_settings_wootocheckout ? "checked" : ""; ?> id="snillrik_settings_wootocheckout" name="snillrik_settings_wootocheckout">
+  					<div class="snillrik-settings-slider"></div>
+				</label>
+    			<!--label class="switch">
+  					<input type="checkbox" <?php echo $snillrik_settings_wootocheckout2 ? "checked" : ""; ?> id="snillrik_settings_wootocheckout2" name="snillrik_settings_wootocheckout2">
+  					<div class="snillrik-settings-slider"></div>
+				</label-->
+				<?php else: ?>
+					(WooCommerce is not activated so this is not in use)
+				<?php endif; ?>				
+				</div>
+			</div>
+					
 		</div>			
 	</div>
 

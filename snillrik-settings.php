@@ -20,6 +20,7 @@ require_once SNILLRIK_SETTINGS_DIR . 'classes/turnofftitle.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/admintoolbar.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/turnoffxmlrpc.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/redirect_after_login.php';
+require_once SNILLRIK_SETTINGS_DIR . 'classes/woocommerce.php';
 
 new SNSET_Blockeditor();
 new SNSET_Comments();
@@ -28,7 +29,10 @@ new SNSET_TurnOffTitle();
 new SNSET_AdminToolbar();
 new SNSET_TurnOffXMLRPC();
 new SNSET_RedirectLogin();
-
+if(class_exists( 'woocommerce' )){
+	require_once SNILLRIK_SETTINGS_DIR . 'classes/woocommerce.php';
+	new SNSET_WooCommerce();
+}
 /**
  * ToD0
  */
