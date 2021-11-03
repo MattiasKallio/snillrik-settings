@@ -23,6 +23,7 @@ function snillrik_settings_create_menu()
 function register_snillrik_settings_settings()
 {
     register_setting('snillrik-settings-group', 'snillrik_settings_blockeditor');
+	register_setting('snillrik-settings-group', 'snillrik_settings_classicwidgets');
     register_setting('snillrik-settings-group', 'snillrik_settings_turnoffcomments');
     register_setting('snillrik-settings-group', 'snillrik_settings_turnoffemail');
     register_setting('snillrik-settings-group', 'snillrik_settings_turnoffemail_email');
@@ -51,6 +52,7 @@ function snillrik_settings_page()
 	settings_fields('snillrik-settings-group');
     do_settings_sections('snillrik-settings-group');
     $turnoffblockeditor = get_option('snillrik_settings_blockeditor', array());
+	$classicwidgets = get_option('snillrik_settings_classicwidgets', array());
     $turnoffcomments = get_option('snillrik_settings_turnoffcomments', array());
     $turnoffemail = get_option('snillrik_settings_turnoffemail', array());
     $snillrik_settings_turnoffemail_email = get_option('snillrik_settings_turnoffemail_email', "");
@@ -79,23 +81,23 @@ function snillrik_settings_page()
 			</div>
 			<div class="snillrik-settings-item">
 				<div class="snillrik-settings-item-inner">
+				<h3>Widgets</h3>
+				<p>To use classic widgets</p>
+				<label class="switch">
+  					<input type="checkbox" <?php echo $classicwidgets ? "checked" : ""; ?> class="" id="snillrik_settings_classicwidgets" name="snillrik_settings_classicwidgets">
+  					<div class="snillrik-settings-slider"></div>
+				</label>
+				</div>
+			</div>			
+			
+			<div class="snillrik-settings-item">
+				<div class="snillrik-settings-item-inner">
 				<h3>Comments</h3>
 				<p>To turn off all the comments everywhere. (does not erase old comments)</p>
 				<label class="switch">
   					<input type="checkbox" <?php echo $turnoffcomments ? "checked" : ""; ?> id="snillrik_settings_turnoffcomments" name="snillrik_settings_turnoffcomments">
   					<div class="snillrik-settings-slider"></div>
 				</label>
-				</div>
-			</div>
-			<div class="snillrik-settings-item">
-				<div class="snillrik-settings-item-inner">
-				<h3>E-mails</h3>
-				<p>Redirect all emails to admin to ensure that customers or users get no emails.<br />Probably mostly used for development and testing.</p>
-    			<label class="switch">
-  					<input type="checkbox" <?php echo $turnoffemail ? "checked" : ""; ?> id="snillrik_settings_turnoffemail" name="snillrik_settings_turnoffemail">
-  					<div class="snillrik-settings-slider"></div>
-				</label>
-				<input type="text" value="<?php echo $snillrik_settings_turnoffemail_email; ?>" id="snillrik_settings_turnoffemail_email" name="snillrik_settings_turnoffemail_email">
 				</div>
 			</div>
 		</div>
@@ -146,6 +148,17 @@ function snillrik_settings_page()
 			</div>
 		</div>
 		<div class="snillrik-settings-row">
+		<div class="snillrik-settings-item">
+				<div class="snillrik-settings-item-inner">
+				<h3>E-mails</h3>
+				<p>Redirect all emails to admin to ensure that customers or users get no emails.<br />Probably mostly used for development and testing.</p>
+    			<label class="switch">
+  					<input type="checkbox" <?php echo $turnoffemail ? "checked" : ""; ?> id="snillrik_settings_turnoffemail" name="snillrik_settings_turnoffemail">
+  					<div class="snillrik-settings-slider"></div>
+				</label>
+				<input type="text" value="<?php echo $snillrik_settings_turnoffemail_email; ?>" id="snillrik_settings_turnoffemail_email" name="snillrik_settings_turnoffemail_email">
+				</div>
+			</div>
 			<div class="snillrik-settings-item">
 				<div class="snillrik-settings-item-inner">
 				<h3>XMLRPC</h3>
