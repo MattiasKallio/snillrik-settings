@@ -22,18 +22,22 @@ function snillrik_settings_create_menu()
  */
 function register_snillrik_settings_settings()
 {
-    register_setting('snillrik-settings-group', 'snillrik_settings_blockeditor');
-	register_setting('snillrik-settings-group', 'snillrik_settings_classicwidgets');
-    register_setting('snillrik-settings-group', 'snillrik_settings_turnoffcomments');
-    register_setting('snillrik-settings-group', 'snillrik_settings_turnoffemail');
-    register_setting('snillrik-settings-group', 'snillrik_settings_turnoffemail_email');
-    register_setting('snillrik-settings-group', 'snillrik_settings_turnofftitle');
-    register_setting('snillrik-settings-group', 'snillrik_settings_admintoolbar');
-    register_setting('snillrik-settings-group', 'snillrik_settings_turnoffxmlrpc');
-	register_setting('snillrik-settings-group', 'snillrik_settings_redirectlogin');
-	register_setting('snillrik-settings-group', 'snillrik_settings_redirectlogin_page');
-	register_setting('snillrik-settings-group', 'snillrik_settings_wootocheckout');
-	register_setting('snillrik-settings-group', 'snillrik_settings_wootocheckout2');
+	$sanitize_args_str = array(
+		'type' => 'string',
+		'sanitize_callback' => 'sanitize_text_field',
+	);
+    register_setting('snillrik-settings-group', 'snillrik_settings_blockeditor', $sanitize_args_str);
+	register_setting('snillrik-settings-group', 'snillrik_settings_classicwidgets', $sanitize_args_str);
+    register_setting('snillrik-settings-group', 'snillrik_settings_turnoffcomments', $sanitize_args_str);
+    register_setting('snillrik-settings-group', 'snillrik_settings_turnoffemail', $sanitize_args_str);
+    register_setting('snillrik-settings-group', 'snillrik_settings_turnoffemail_email', $sanitize_args_str);
+    register_setting('snillrik-settings-group', 'snillrik_settings_turnofftitle', $sanitize_args_str);
+    register_setting('snillrik-settings-group', 'snillrik_settings_admintoolbar', $sanitize_args_str);
+    register_setting('snillrik-settings-group', 'snillrik_settings_turnoffxmlrpc', $sanitize_args_str);
+	register_setting('snillrik-settings-group', 'snillrik_settings_redirectlogin', $sanitize_args_str);
+	register_setting('snillrik-settings-group', 'snillrik_settings_redirectlogin_page', $sanitize_args_str);
+	register_setting('snillrik-settings-group', 'snillrik_settings_wootocheckout', $sanitize_args_str);
+	register_setting('snillrik-settings-group', 'snillrik_settings_wootocheckout2', $sanitize_args_str);
 }
 
 /**
