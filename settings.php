@@ -12,7 +12,7 @@ function snillrik_settings_create_menu()
         'administrator',
         __FILE__,
         'snillrik_settings_page',
-        plugins_url('/images/snillrik_bulb.svg', __FILE__)
+        plugins_url('/images/snillrik_icon.svg', __FILE__)
     );
     add_action('admin_init', 'register_snillrik_settings_settings');
 }
