@@ -1,7 +1,10 @@
 <?php
+defined('ABSPATH') or die('This script cannot be accessed directly.');
 /**
  * To not show the title if h1 is present in content.
  */
+new SNSET_TurnOffTitle();
+
 class SNSET_TurnOffTitle
 {
     public function __construct()

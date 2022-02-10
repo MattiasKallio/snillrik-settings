@@ -1,4 +1,9 @@
 <?php
+defined('ABSPATH') or die('This script cannot be accessed directly.');
+/**
+ * Turn of admin toolbar.
+ */
+new SNSET_AdminToolbar();
 
 class SNSET_AdminToolbar
 {

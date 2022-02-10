@@ -1,4 +1,9 @@
 <?php
+defined('ABSPATH') or die('This script cannot be accessed directly.');
+/**
+ * Turn off comments, everywhere.
+ */
+new SNSET_Comments();
 
 class SNSET_Comments
 {

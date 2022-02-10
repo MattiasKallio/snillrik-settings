@@ -1,8 +1,10 @@
 <?php
-
+defined('ABSPATH') or die('This script cannot be accessed directly.');
 /**
- * To not show the title if h1 is present in content.
+ * Use classic widgets.
  */
+new SNSET_ClassicWidgets();
+
 class SNSET_ClassicWidgets
 {
     public function __construct()

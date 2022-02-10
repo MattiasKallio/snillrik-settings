@@ -1,4 +1,10 @@
 <?php
+defined('ABSPATH') or die('This script cannot be accessed directly.');
+/**
+ * To turn of the block editor.
+ */
+
+new SNSET_Blockeditor();
 
 class SNSET_Blockeditor
 {

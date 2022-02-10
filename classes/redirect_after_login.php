@@ -1,7 +1,11 @@
 <?php
+defined('ABSPATH') or die('This script cannot be accessed directly.');
 /**
- * To block all outgoing emails, to ensure that no mails are sent to customers while testing stuff.
+ * Redirect after login to this page.
  */
+
+new SNSET_RedirectLogin();
+
 class SNSET_RedirectLogin
 {
     public function __construct()

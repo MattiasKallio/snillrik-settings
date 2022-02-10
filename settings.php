@@ -119,11 +119,11 @@ function snillrik_settings_page()
 				
 				<select name="snillrik_settings_redirectlogin_page">
 					<?php
-					echo '<option value="home" ' . selected( 'home', $snillrik_settings_redirectlogin_page ) . '>Home</option>';
-					echo '<option value="admin" ' . selected( 'admin', $snillrik_settings_redirectlogin_page ) . '>Admin</option>';
+					echo '<option value="home" ' . selected( 'home', esc_attr($snillrik_settings_redirectlogin_page )) . '>Home</option>';
+					echo '<option value="admin" ' . selected( 'admin', esc_attr($snillrik_settings_redirectlogin_page )) . '>Admin</option>';
                     if( $pages = get_pages() ){
 						foreach( $pages as $page ){
-                    		echo '<option value="' . $page->ID . '" ' . selected( $page->ID, $snillrik_settings_redirectlogin_page ) . '>' . $page->post_title . '</option>';
+                    		echo '<option value="' . intval($page->ID) . '" ' . selected( intval($page->ID), esc_attr($snillrik_settings_redirectlogin_page) ) . '>' . esc_attr($page->post_title) . '</option>';
                     	}
                     }
                 	?>
@@ -160,7 +160,7 @@ function snillrik_settings_page()
   					<input type="checkbox" <?php echo $turnoffemail ? "checked" : ""; ?> id="snillrik_settings_turnoffemail" name="snillrik_settings_turnoffemail">
   					<div class="snillrik-settings-slider"></div>
 				</label>
-				<input type="text" value="<?php echo $snillrik_settings_turnoffemail_email; ?>" id="snillrik_settings_turnoffemail_email" name="snillrik_settings_turnoffemail_email">
+				<input type="text" value="<?php echo esc_attr($snillrik_settings_turnoffemail_email); ?>" id="snillrik_settings_turnoffemail_email" name="snillrik_settings_turnoffemail_email">
 				</div>
 			</div>
 			<div class="snillrik-settings-item">
