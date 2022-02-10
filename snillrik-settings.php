@@ -11,6 +11,7 @@ License: GPL2
 
 DEFINE("SNILLRIK_SETTINGS_PLUGIN_URL", plugin_dir_url(__FILE__));
 DEFINE("SNILLRIK_SETTINGS_DIR", plugin_dir_path(__FILE__));
+DEFINE("SNILLRIK_SETTINGS_NAME", "snillrik-settings");
 
 require_once SNILLRIK_SETTINGS_DIR . 'settings.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/blockeditor.php';
@@ -33,9 +34,9 @@ if(class_exists( 'woocommerce' )){
 //add custom css?
 
 function snillrik_settings_addCSScripts(){
-	wp_enqueue_script 	( 'snillrik-settings-script', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/snillrik-settings.js', array ('jquery' ));
+	wp_enqueue_script 	( SNILLRIK_SETTINGS_NAME.'-script', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/snillrik-settings.js', array ('jquery' ));
 	wp_enqueue_script 	( 'jscolor', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/jscolor.min.js', array ('jquery' ));
-    wp_enqueue_style 	( 'snillrik-settings-main', SNILLRIK_SETTINGS_PLUGIN_URL . 'snillrik-settings.css' );
+    wp_enqueue_style 	( SNILLRIK_SETTINGS_NAME.'-main', SNILLRIK_SETTINGS_PLUGIN_URL . 'snillrik-settings.css' );
 }
  
 add_action('admin_enqueue_scripts','snillrik_settings_addCSScripts');

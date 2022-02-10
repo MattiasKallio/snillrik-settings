@@ -68,6 +68,7 @@ function snillrik_settings_page()
     $snillrik_settings_redirectlogin_page = get_option('snillrik_settings_redirectlogin_page', "");
 	$snillrik_settings_wootocheckout = get_option('snillrik_settings_wootocheckout', "");
 	$snillrik_settings_wootocheckout2 = get_option('snillrik_settings_wootocheckout2', "");
+	$switchname = esc_attr(SNILLRIK_SETTINGS_NAME."-switch");
 	
     ?>
 
@@ -77,7 +78,7 @@ function snillrik_settings_page()
 				<div class="snillrik-settings-item-inner">
 				<h3>Gutenberg</h3>
 				<p>To turn of Gutenberg block editor</p>
-				<label class="switch">
+				<label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $turnoffblockeditor ? "checked" : ""; ?> class="" id="snillrik_settings_blockeditor" name="snillrik_settings_blockeditor">
   					<div class="snillrik-settings-slider"></div>
 				</label>
@@ -87,7 +88,7 @@ function snillrik_settings_page()
 				<div class="snillrik-settings-item-inner">
 				<h3>Widgets</h3>
 				<p>To use classic widgets</p>
-				<label class="switch">
+				<label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $classicwidgets ? "checked" : ""; ?> class="" id="snillrik_settings_classicwidgets" name="snillrik_settings_classicwidgets">
   					<div class="snillrik-settings-slider"></div>
 				</label>
@@ -98,7 +99,7 @@ function snillrik_settings_page()
 				<div class="snillrik-settings-item-inner">
 				<h3>Comments</h3>
 				<p>To turn off all the comments everywhere. (does not erase old comments)</p>
-				<label class="switch">
+				<label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $turnoffcomments ? "checked" : ""; ?> id="snillrik_settings_turnoffcomments" name="snillrik_settings_turnoffcomments">
   					<div class="snillrik-settings-slider"></div>
 				</label>
@@ -112,7 +113,7 @@ function snillrik_settings_page()
 				<div class="snillrik-settings-item-inner">
 				<h3>Redirect login</h3>
 				<p>Redirects to some other page than the admin page on login.</p>
-    			<label class="switch">
+    			<label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $redirectlogin ? "checked" : ""; ?> id="snillrik_settings_redirectlogin" name="snillrik_settings_redirectlogin">
   					<div class="snillrik-settings-slider"></div>
 				</label>
@@ -134,7 +135,7 @@ function snillrik_settings_page()
 				<div class="snillrik-settings-item-inner">
 				<h3>Title on pages</h3>
 				<p>Filter the_title -function to not show a title if there is a H1 in content. The Idea is that if you have a large image or other stuff that you want above the title, you just add a H1 where you want it and the automatic one will not be shown.</p>
-    			<label class="switch">
+    			<label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $turnoffetitle ? "checked" : ""; ?> id="snillrik_settings_turnofftitle" name="snillrik_settings_turnofftitle">
   					<div class="snillrik-settings-slider"></div>
 				</label>
@@ -144,7 +145,7 @@ function snillrik_settings_page()
 				<div class="snillrik-settings-item-inner">
 				<h3>Admin toolbar frontend</h3>
 				<p>Turn off the frontend admin toolbar.</p>
-    			<label class="switch">
+    			<label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $turnoffeadmintoolbar ? "checked" : ""; ?> id="snillrik_settings_admintoolbar" name="snillrik_settings_admintoolbar">
   					<div class="snillrik-settings-slider"></div>
 				</label>
@@ -156,7 +157,7 @@ function snillrik_settings_page()
 				<div class="snillrik-settings-item-inner">
 				<h3>E-mails</h3>
 				<p>Redirect all emails to admin to ensure that customers or users get no emails.<br />Probably mostly used for development and testing.</p>
-    			<label class="switch">
+    			<label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $turnoffemail ? "checked" : ""; ?> id="snillrik_settings_turnoffemail" name="snillrik_settings_turnoffemail">
   					<div class="snillrik-settings-slider"></div>
 				</label>
@@ -167,7 +168,7 @@ function snillrik_settings_page()
 				<div class="snillrik-settings-item-inner">
 				<h3>XMLRPC</h3>
 				<p>Turn off xmlrpc.php xmlrpc is used to communicate with WP and is mostly not used, but it is a way for haxxor type people to attack your site.</p>
-    			<label class="switch">
+    			<label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $turnoffxmlrpc ? "checked" : ""; ?> id="snillrik_settings_turnoffxmlrpc" name="snillrik_settings_turnoffxmlrpc">
   					<div class="snillrik-settings-slider"></div>
 				</label>
@@ -179,11 +180,11 @@ function snillrik_settings_page()
 				<h3>WooCommerce</h3>
 				<p>Redirect to Checkout after "add to cart"</p>
 				<?php if(class_exists( 'woocommerce' )): ?>
-    			<label class="switch">
+    			<label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $snillrik_settings_wootocheckout ? "checked" : ""; ?> id="snillrik_settings_wootocheckout" name="snillrik_settings_wootocheckout">
   					<div class="snillrik-settings-slider"></div>
 				</label>
-    			<!--label class="switch">
+    			<!--label class="<?php echo $switchname; ?>">
   					<input type="checkbox" <?php echo $snillrik_settings_wootocheckout2 ? "checked" : ""; ?> id="snillrik_settings_wootocheckout2" name="snillrik_settings_wootocheckout2">
   					<div class="snillrik-settings-slider"></div>
 				</label-->

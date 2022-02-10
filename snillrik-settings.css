@@ -36,7 +36,7 @@
 
 /* The switch - the box around the slider */
 
-.switch {
+.snillrik-settings-switch {
     position: relative;
     display: inline-block;
     width: 60px;
@@ -46,7 +46,7 @@
 
 /* Hide default HTML checkbox */
 
-.switch input {
+.snillrik-settings-switch input {
     display: none;
 }
 
