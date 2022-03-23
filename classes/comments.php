@@ -9,11 +9,9 @@ class SNSET_Comments
 {
     public function __construct()
     {
-        //probably using soon.
         $turnoffcomments = get_option('snillrik_settings_turnoffcomments', array());
 
         if ($turnoffcomments == "on") {
-            //die("TURN OFF!");
             add_action('admin_init', array($this, 'disable_comments_post_types_support'));
             add_filter('comments_open', array($this, 'disable_comments_status'), 20, 2);
             add_filter('pings_open', array($this, 'disable_comments_status'), 20, 2);
@@ -25,7 +23,7 @@ class SNSET_Comments
             add_action('init', array($this, 'disable_comments_admin_bar'));
 			add_filter( 'comments_template', array($this, 'filter_comments_template'), 10, 1 );
         }
-    }// define the comments_template callback 
+    }
          
 // add the filter 
  public function filter_comments_template( $theme_template ) { 

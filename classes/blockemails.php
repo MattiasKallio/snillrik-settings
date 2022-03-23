@@ -9,13 +9,11 @@ class SNSET_BlockEmail
 {
     public function __construct()
     {
-        //probably using soon.
         $turnoffemails = get_option('snillrik_settings_turnoffemail', false);
 
         if ($turnoffemails == "on") {
-            //die("TURN OFF!");
 			add_filter( 'wp_mail', array( $this, 'redirect_mail' ), 9999, 1 );
-			//add_action( 'admin_notices', array( $this, 'do_admin_notice' ) );
+
         }
     }
 // Disable support for comments and trackbacks in post types

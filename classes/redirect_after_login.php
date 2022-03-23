@@ -10,14 +10,14 @@ class SNSET_RedirectLogin
 {
     public function __construct()
     {
-        //probably using soon.
         $redirectlogin = get_option('snillrik_settings_redirectlogin', false);
 
         if ($redirectlogin == "on") {
             add_filter('login_redirect', array($this, 'redirect_to_page'),10,3);
         }
     }
-// Disable support for comments and trackbacks in post types
+
+    //Redirecting to the page.
     public function redirect_to_page($url, $request, $user)
     {
         if ( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {

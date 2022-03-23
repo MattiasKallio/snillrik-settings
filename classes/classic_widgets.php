@@ -9,7 +9,6 @@ class SNSET_ClassicWidgets
 {
     public function __construct()
     {
-        //probably using soon.
         $classicwidgets = get_option('snillrik_settings_classicwidgets', array());
 
         if ($classicwidgets == "on") {

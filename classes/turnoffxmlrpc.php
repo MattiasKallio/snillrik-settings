@@ -9,7 +9,6 @@ class SNSET_TurnOffXMLRPC
 {
     public function __construct()
     {
-        //probably using soon.
         $turnoffxmlrpc = get_option('snillrik_settings_turnoffxmlrpc', array());
         
         if ($turnoffxmlrpc == "on") {

@@ -40,7 +40,6 @@ class SNSET_TurnOffTitle
         remove_filter('the_title', array($this, 'title_update'), 10, 2);
         return $nav_menu;
     }
-    // this filter fires just before the nav menu item creation process
 
     public function add_title_filter_non_menu($items, $args)
     {
@@ -48,6 +47,5 @@ class SNSET_TurnOffTitle
         add_filter('the_title', array($this, 'title_update'), 10, 2);
         return $items;
     }
-    // this filter fires after nav menu item creation is done
 
 }
