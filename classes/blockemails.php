@@ -17,17 +17,17 @@ class SNSET_BlockEmail
         }
     }
 // Disable support for comments and trackbacks in post types
-    public function redirect_mail()
+    public function redirect_mail($mail_args)
     {
         $site_admin = get_site_option( 'admin_email' );
         $blockemailemail = get_option('snillrik_settings_turnoffemail_email', false);
         $admin_email = $blockemailemail ? $blockemailemail :  $site_admin;
         // Only redirect email that is NOT going to the current site admin
         // Note: this isn't comparing with the value passed into the rea_admin_email filter
-        if ( $$site_admin !== $mail_args['to'] ) {
-            $mail_args['message'] = 'Was intended for: ' . $mail_args['to'] . "\n\n" . $mail_args['message'];
-            $mail_args['subject'] = 'Redirected by Snillrik-plugin | ' . $mail_args['subject'];
-            $mail_args['to'] = $admin_email;
+        if ( $admin_email !== $mail_args['to'] ) {   
+            $mail_args['message'] = 'Was intended for: ' . sanitize_email($mail_args['to']) . "\n\n" . sanitize_text_field($mail_args['message']);
+            $mail_args['subject'] = 'Redirected by Snillrik-plugin | ' . sanitize_text_field($mail_args['subject']);
+            $mail_args['to'] = sanitize_email($admin_email);
         }
         return $mail_args;
     }

@@ -16,6 +16,10 @@ class SNSET_WooCommerce
             add_filter('woocommerce_add_to_cart_redirect', 'redirect_checkout_add_cart');
         }
     }
+
+    /**
+     * Redirect to checkout after add to cart.
+     */
     function redirect_checkout_add_cart()
     {
             return wc_get_checkout_url();

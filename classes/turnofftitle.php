@@ -24,7 +24,7 @@ class SNSET_TurnOffTitle
             $post = get_post($id);
             if ($post instanceof WP_Post && ($post->post_type == 'post' || $post->post_type == 'page')) {
                 if (strpos($post->post_content, "h1>") == false) {
-                    return $title;
+                    return esc_attr($title);
                 } else {
                     return "";
                 }
