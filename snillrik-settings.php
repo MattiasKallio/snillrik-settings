@@ -22,6 +22,7 @@ require_once SNILLRIK_SETTINGS_DIR . 'classes/admintoolbar.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/turnoffxmlrpc.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/classic_widgets.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/redirect_after_login.php';
+require_once SNILLRIK_SETTINGS_DIR . 'classes/customizer.php';
 if(class_exists( 'woocommerce' )){
 	require_once SNILLRIK_SETTINGS_DIR . 'classes/woocommerce.php';	
 }

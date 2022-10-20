@@ -38,6 +38,7 @@ function register_snillrik_settings_settings()
 	register_setting('snillrik-settings-group', 'snillrik_settings_redirectlogin_page', $sanitize_args_str);
 	register_setting('snillrik-settings-group', 'snillrik_settings_wootocheckout', $sanitize_args_str);
 	register_setting('snillrik-settings-group', 'snillrik_settings_wootocheckout2', $sanitize_args_str);
+	register_setting('snillrik-settings-group', 'snillrik_settings_customizerlink', $sanitize_args_str);
 }
 
 /**
@@ -68,6 +69,8 @@ function snillrik_settings_page()
     $snillrik_settings_redirectlogin_page = get_option('snillrik_settings_redirectlogin_page', "");
 	$snillrik_settings_wootocheckout = get_option('snillrik_settings_wootocheckout', "");
 	$snillrik_settings_wootocheckout2 = get_option('snillrik_settings_wootocheckout2', "");
+	$snillrik_settings_customizerlink = get_option('snillrik_settings_customizerlink', "");
+	
 	$switchname = esc_attr(SNILLRIK_SETTINGS_NAME."-switch");
 	
     ?>
@@ -150,7 +153,7 @@ function snillrik_settings_page()
   					<div class="snillrik-settings-slider"></div>
 				</label>
 				</div>
-			</div>
+			</div>			
 		</div>
 		<div class="snillrik-settings-row">
 		<div class="snillrik-settings-item">
@@ -194,7 +197,19 @@ function snillrik_settings_page()
 				</div>
 			</div>
 					
-		</div>			
+		</div>	
+		<div class="snillrik-settings-row">
+		<div class="snillrik-settings-item">
+				<div class="snillrik-settings-item-inner">
+				<h3>Add customizer link</h3>
+				<p>If you're using TwentyTwentyTwo and want the customizer back (or at least the custom css)</p>
+    			<label class="<?php echo $switchname; ?>">
+  					<input type="checkbox" <?php echo $snillrik_settings_customizerlink ? "checked" : ""; ?> id="snillrik_settings_customizerlink" name="snillrik_settings_customizerlink">
+  					<div class="snillrik-settings-slider"></div>
+				</label>
+				</div>
+			</div>	
+		</div>		
 	</div>
 
 
