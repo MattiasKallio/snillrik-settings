@@ -33,4 +33,5 @@ If WooCommerce is active on the site, you can choose to redirect to Checkout aft
 In themes like the Twentytwentytwo it's really hard to find the link to the customizer. This adds it under Appearance, ...where he belongs!
 
 == Changelog ==
-1.0 first version, still with hope of a bright future.
+1.0.1 adding esc where needed and removed some unused code. Corrected missmatching versions
+1.0.0 first version, still with hope of a bright future.
