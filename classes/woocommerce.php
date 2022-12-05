@@ -11,9 +11,8 @@ class SNSET_WooCommerce
     public function __construct()
     {
         $redirect_to_checkout = get_option('snillrik_settings_wootocheckout', array());
-
         if ($redirect_to_checkout == "on" && class_exists('woocommerce')) {
-            add_filter('woocommerce_add_to_cart_redirect', 'redirect_checkout_add_cart');
+            add_filter('woocommerce_add_to_cart_redirect', [$this, 'redirect_checkout_add_cart']);
         }
     }
 
