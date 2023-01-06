@@ -32,7 +32,6 @@ function snillrik_settings_page()
 			<?php
 			settings_fields('snillrik-settings-group');
 			do_settings_sections('snillrik-settings-group');
-
 			?>
 
 			<div class="snillrik-settings-main">
@@ -47,10 +46,14 @@ function snillrik_settings_page()
 							<?php SNSET_Classicwidgets::settings_html(); ?>
 						</div>
 					</div>
-
 					<div class="snillrik-settings-item">
 						<div class="snillrik-settings-item-inner">
 							<?php SNSET_Comments::settings_html(); ?>
+						</div>
+					</div>
+					<div class="snillrik-settings-item">
+						<div class="snillrik-settings-item-inner">
+							<?php echo SNSET_Customizer::settings_html(); ?>
 						</div>
 					</div>
 				</div>
@@ -73,7 +76,7 @@ function snillrik_settings_page()
 						</div>
 					</div>
 				</div>
-				
+
 
 				<div class="snillrik-settings-row">
 					<div class="snillrik-settings-item">
@@ -91,15 +94,15 @@ function snillrik_settings_page()
 							<?php echo SNSET_ChangeEmail::settings_html(); ?>
 						</div>
 					</div>
+				</div>
+
+
+				<div class="snillrik-settings-row">
 					<div class="snillrik-settings-item">
 						<div class="snillrik-settings-item-inner">
 							<?php echo SNSET_TurnOffXMLRPC::settings_html(); ?>
 						</div>
 					</div>
-				</div>
-
-				
-				<div class="snillrik-settings-row">
 					<div class="snillrik-settings-item">
 						<div class="snillrik-settings-item-inner">
 							<?php echo SNSET_TurnOffTitle::settings_html(); ?>
@@ -108,11 +111,6 @@ function snillrik_settings_page()
 					<div class="snillrik-settings-item">
 						<div class="snillrik-settings-item-inner">
 							<?php echo SNSET_WooCommerce::settings_html(); ?>
-						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php echo SNSET_Customizer::settings_html(); ?>
 						</div>
 					</div>
 				</div>
