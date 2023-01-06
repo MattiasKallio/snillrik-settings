@@ -13,6 +13,9 @@ For turning off the comments, both the fronten and in admin. Does not delete old
 ## Redirect login
 Select a page to redirect to after logging in. Admins will still redirect to wp-admin.
 
+## Redirect logout
+Select a page to redirect to after logging out.
+
 ## Redirect profile
 Select a page to redirect the profile link to, (the one in the admin bar etc.)
 
@@ -36,6 +39,8 @@ If WooCommerce is active on the site, you can choose to redirect to Checkout aft
 In themes like the Twentytwentytwo it's really hard to find the link to the customizer. This adds it under Appearance, ...where he belongs!
 
 == Changelog ==
+1.0.4 - 2022-12-28
+Added a redirect option for logout.
 
 1.0.3 - 22-12-05
 Fixed minor bug in woo redirect to cart (sometimes it did not work)

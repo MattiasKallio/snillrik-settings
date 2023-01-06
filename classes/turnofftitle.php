@@ -9,6 +9,7 @@ class SNSET_TurnOffTitle
 {
     public function __construct()
     {
+        add_action('admin_init', [$this, 'register']);
         $turnofftitle = get_option('snillrik_settings_turnofftitle', array());
 
         if ($turnofftitle == "on") {
@@ -16,6 +17,29 @@ class SNSET_TurnOffTitle
             add_filter('pre_wp_nav_menu', array($this, 'remove_title_filter_nav_menu'), 10, 2);
             add_filter('wp_nav_menu_items', array($this, 'add_title_filter_non_menu'), 10, 2);
         }
+    }
+
+    //register the settings
+    function register()
+    {
+        $sanitize_args_str = array(
+            'type' => 'string',
+            'sanitize_callback' => 'sanitize_text_field',
+        );
+        register_setting('snillrik-settings-group', 'snillrik_settings_turnofftitle', $sanitize_args_str);
+    }
+
+    //html for the settings page
+    public static function settings_html()
+    {
+        $turnoffetitle = get_option('snillrik_settings_turnofftitle', array());
+        $html_out = "<h3>Title on pages</h3>";
+        $html_out .= "<p>Filter the_title -function to not show a title if there is a H1 in content. The Idea is that if you have a large image or other stuff that you want above the title, you just add a H1 where you want it and the automatic one will not be shown.</p>";
+        $html_out .= '<label class="' . SNILLRIK_SETTINGS_SWITCHNAME . '">
+            <input type="checkbox" ' . ($turnoffetitle ? "checked" : "") . ' id="snillrik_settings_turnofftitle" name="snillrik_settings_turnofftitle" />
+            <div class="snillrik-settings-slider"></div>
+        </label>';
+        return $html_out;
     }
 
     public function title_update($title, $id = null)

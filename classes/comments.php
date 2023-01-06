@@ -21,16 +21,40 @@ class SNSET_Comments
             add_action('admin_init', array($this, 'disable_comments_admin_menu_redirect'));
             add_action('admin_init', array($this, 'disable_comments_dashboard'));
             add_action('init', array($this, 'disable_comments_admin_bar'));
-			add_filter( 'comments_template', array($this, 'filter_comments_template'), 10, 1 );
+            add_filter('comments_template', array($this, 'filter_comments_template'), 10, 1);
         }
     }
-         
-// add the filter 
- public function filter_comments_template( $theme_template ) { 
-    // make filter magic happen here... 
-    return $theme_template; 
-}
-// Disable support for comments and trackbacks in post types
+
+    //register the settings
+    function register()
+    {
+        $sanitize_args_str = array(
+            'type' => 'string',
+            'sanitize_callback' => 'sanitize_text_field',
+        );
+        register_setting('snillrik-settings-group', 'snillrik_settings_turnoffcomments', $sanitize_args_str);
+    }
+
+    //html for the settings page
+    public static function settings_html()
+    {
+        $turnoffcomments = get_option('snillrik_settings_turnoffcomments', array());
+        $html_out = '<h3>Turn off comments</h3>
+        <p>To turn off all the comments everywhere. (does not erase old comments)</p>
+        <label class="' . SNILLRIK_SETTINGS_SWITCHNAME . '">
+            <input type="checkbox" ' . ($turnoffcomments ? "checked" : "") . ' id="snillrik_settings_turnoffcomments" name="snillrik_settings_turnoffcomments" />
+            <div class="snillrik-settings-slider"></div>
+        </label>';
+        echo $html_out;
+    }
+
+    // add the filter 
+    public function filter_comments_template($theme_template)
+    {
+        // make filter magic happen here... 
+        return $theme_template;
+    }
+    // Disable support for comments and trackbacks in post types
     public function disable_comments_post_types_support()
     {
         $post_types = get_post_types();
@@ -42,26 +66,26 @@ class SNSET_Comments
         }
     }
 
-// Close comments on the front-end
+    // Close comments on the front-end
     public function disable_comments_status()
     {
         return false;
     }
 
-// Hide existing comments
+    // Hide existing comments
     public function disable_comments_hide_existing_comments($comments)
     {
         $comments = array();
         return $comments;
     }
 
-// Remove comments page in menu
+    // Remove comments page in menu
     public function disable_comments_admin_menu()
     {
         remove_menu_page('edit-comments.php');
     }
 
-// Redirect any user trying to access comments page
+    // Redirect any user trying to access comments page
     public function disable_comments_admin_menu_redirect()
     {
         global $pagenow;
@@ -71,18 +95,17 @@ class SNSET_Comments
         }
     }
 
-// Remove comments metabox from dashboard
+    // Remove comments metabox from dashboard
     public function disable_comments_dashboard()
     {
         remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
     }
 
-// Remove comments links from admin bar
+    // Remove comments links from admin bar
     public function disable_comments_admin_bar()
     {
         if (is_admin_bar_showing()) {
             remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
         }
     }
-
 }
