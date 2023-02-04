@@ -9,6 +9,7 @@ class SNSET_Comments
 {
     public function __construct()
     {
+        add_action('admin_init', [$this, 'register']);
         $turnoffcomments = get_option('snillrik_settings_turnoffcomments', array());
 
         if ($turnoffcomments == "on") {
@@ -45,7 +46,7 @@ class SNSET_Comments
             <input type="checkbox" ' . ($turnoffcomments ? "checked" : "") . ' id="snillrik_settings_turnoffcomments" name="snillrik_settings_turnoffcomments" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        echo $html_out;
+        return $html_out;
     }
 
     // add the filter 

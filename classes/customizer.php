@@ -9,6 +9,7 @@ class SNSET_Customizer
 {
     public function __construct()
     {
+        add_action('admin_init', [$this, 'register']);
         $showcustomizerlinke = get_option('snillrik_settings_customizerlink', array());
         if ($showcustomizerlinke == 'on') {
             add_action('admin_init', [$this, 'snillrik_customizer_link']);
@@ -41,6 +42,6 @@ class SNSET_Customizer
             <input type="checkbox" ' . ($showcustomizerlinke ? "checked" : "") . ' id="snillrik_settings_customizerlink" name="snillrik_settings_customizerlink" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        echo $html_out;
+        return $html_out;
     }
 }

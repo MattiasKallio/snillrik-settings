@@ -38,17 +38,17 @@ function snillrik_settings_page()
 				<div class="snillrik-settings-row">
 					<div class="snillrik-settings-item">
 						<div class="snillrik-settings-item-inner">
-							<?php SNSET_Blockeditor::settings_html(); ?>
+							<?php echo SNSET_Blockeditor::settings_html(); ?>
 						</div>
 					</div>
 					<div class="snillrik-settings-item">
 						<div class="snillrik-settings-item-inner">
-							<?php SNSET_Classicwidgets::settings_html(); ?>
+							<?php echo SNSET_Classicwidgets::settings_html(); ?>
 						</div>
 					</div>
 					<div class="snillrik-settings-item">
 						<div class="snillrik-settings-item-inner">
-							<?php SNSET_Comments::settings_html(); ?>
+							<?php echo SNSET_Comments::settings_html(); ?>
 						</div>
 					</div>
 					<div class="snillrik-settings-item">

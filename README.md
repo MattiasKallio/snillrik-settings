@@ -43,6 +43,9 @@ In themes like the Twentytwentytwo it's really hard to find the link to the cust
 
 == Changelog ==
 
+1.1.1
+Fixed som bugs settings did not save properly.
+
 1.1.0 - 2023-01-06
 Moved all settings html for each setting to its class.
 Addes a new setting for default email and email name (ie the wordpress@mydomain.org)

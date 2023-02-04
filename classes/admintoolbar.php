@@ -36,6 +36,6 @@ class SNSET_AdminToolbar
             <input type="checkbox" ' . ($turnoffadmintoolbar ? "checked" : "") . ' id="snillrik_settings_admintoolbar" name="snillrik_settings_admintoolbar" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        echo $html_out;
+        return $html_out;
     }
 }

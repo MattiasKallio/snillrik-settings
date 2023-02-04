@@ -9,6 +9,7 @@ class SNSET_ClassicWidgets
 {
     public function __construct()
     {
+        add_action('admin_init', [$this, 'register']);
         $classicwidgets = get_option('snillrik_settings_classicwidgets', array());
 
         if ($classicwidgets == "on") {
@@ -39,6 +40,6 @@ class SNSET_ClassicWidgets
             <input type="checkbox" ' . ($classicwidgets ? "checked" : "") . ' id="snillrik_settings_classicwidgets" name="snillrik_settings_classicwidgets" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        echo $html_out;
+        return $html_out;
     }
 }

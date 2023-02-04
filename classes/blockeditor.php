@@ -10,6 +10,7 @@ class SNSET_Blockeditor
 {
     public function __construct()
     {
+        add_action('admin_init', [$this, 'register']);
         $turnoffblockeditor = get_option('snillrik_settings_blockeditor', array());
         if ($turnoffblockeditor == "on") {
             add_filter('use_block_editor_for_post', '__return_false', 10);
@@ -37,6 +38,6 @@ class SNSET_Blockeditor
             <input type="checkbox" ' . ($turnoffblockeditor ? "checked" : "") . ' id="snillrik_settings_blockeditor" name="snillrik_settings_blockeditor" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        echo $html_out;
+        return $html_out;
     }
 }
