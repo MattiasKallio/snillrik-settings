@@ -26,6 +26,7 @@ require_once SNILLRIK_SETTINGS_DIR . 'classes/classic_widgets.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/redirects.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/customizer.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/woocommerce.php';
+require_once SNILLRIK_SETTINGS_DIR . 'classes/loginpage.php';
 
 function snillrik_settings_addCSScripts()
 {

@@ -75,6 +75,11 @@ function snillrik_settings_page()
 							<?php echo SNSET_Redirects::settings_html("profile"); ?>
 						</div>
 					</div>
+					<div class="snillrik-settings-item">
+						<div class="snillrik-settings-item-inner">
+						<?php echo SNSET_LoginPage::settings_html(); ?>
+						</div>
+					</div>					
 				</div>
 
 
