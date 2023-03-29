@@ -3,7 +3,7 @@
 Plugin Name: Snillrik Settings
 Plugin URI: http://www.snillrik.se/
 Description: Snillrik settings is a plugin for som basic settings like turning of Gutenberg, adding css, turning of comments etc.
-Version: 1.1.1
+Version: 1.1.4
 Author: Mattias Kallio
 Author URI: http://www.snillrik.se
 License: GPL2
@@ -32,8 +32,15 @@ function snillrik_settings_addCSScripts()
 {
 	wp_enqueue_script(SNILLRIK_SETTINGS_NAME . '-script', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/snillrik-settings.js', array('jquery'));
 	wp_enqueue_script('jscolor', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/jscolor.min.js', array('jquery'));
-	wp_enqueue_style(SNILLRIK_SETTINGS_NAME . '-main', SNILLRIK_SETTINGS_PLUGIN_URL . 'snillrik-settings.css');
+	wp_enqueue_style('snillrik-admin-settings', SNILLRIK_SETTINGS_PLUGIN_URL . 'css/settings-page.css');
+	wp_enqueue_style(SNILLRIK_SETTINGS_NAME . '-main', SNILLRIK_SETTINGS_PLUGIN_URL . 'css/snillrik-settings.css');
 }
 
 add_action('admin_enqueue_scripts', 'snillrik_settings_addCSScripts');
 
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), function($links){
+	$url = esc_url(add_query_arg('page','snillrik-settings/settings.php',get_admin_url() . 'admin.php'));
+	$settings_link = "<a href='$url'>" . __('Settings') . '</a>';
+	array_push($links,$settings_link);
+	return $links;
+});

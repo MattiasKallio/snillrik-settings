@@ -19,11 +19,14 @@ Select a page to redirect to after logging out.
 ## Redirect profile
 Select a page to redirect the profile link to, (the one in the admin bar etc.)
 
+## Login logo
+Use the custom logo as login logo. If you have a logo in the customizer, it will be used. If not, the default logo will be used.
+
 ## Titles on pages
 Filter the_title -function to not show a title if there is a H1 in content. The Idea is that if you have a large image or other stuff that you want above the title, you just add a H1 where you want it and the automatic one will not be shown.
 
 ## Admin toolbar in frontend
-Does not show the toolbar in fronted.
+Does not show the toolbar in fronted. You can select witch roles that should still see it.
 
 ## E-mails
 Redirect all emails to admin to ensure that customers or users get no emails.
@@ -42,6 +45,15 @@ If WooCommerce is active on the site, you can choose to redirect to Checkout aft
 In themes like the Twentytwentytwo it's really hard to find the link to the customizer. This adds it under Appearance, ...where he belongs!
 
 == Changelog ==
+
+1.1.4 -2023-03-29
+Had to be able to turn off the admin toolbar in frontend, but show it for a couple of roles. So added a setting for that.
+
+1.1.3 -2023-03-27
+Added a link to the settings page in the plugins page.
+
+1.1.2 -2023-03-27
+Added a setting for using the logo set in the customizer as login logo.
 
 1.1.1
 Fixed som bugs settings did not save properly.

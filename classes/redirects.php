@@ -73,7 +73,11 @@ class SNSET_Redirects
         $html_out .= '<option value="admin" ' . selected('admin', esc_attr($snillrik_settings_redirectlogin_page),false) . '>Admin</option>';
         if ($pages = get_pages()) {
             foreach ($pages as $page) {
-                $html_out .= '<option value="' . intval($page->ID) . '" ' . selected(intval($page->ID), esc_attr($snillrik_settings_redirectlogin_page), false) . '>' . esc_attr($page->post_title) . '</option>';
+                $page_name = $page->post_title;
+                if (strlen($page_name) > 23) {
+                    $page_name = substr($page_name, 0, 23) . "...";
+                }
+                $html_out .= '<option value="' . intval($page->ID) . '" ' . selected(intval($page->ID), esc_attr($snillrik_settings_redirectlogin_page), false) . '>' . esc_attr($page_name) . '</option>';
             }
         }
         $html_out .= '</select>';
@@ -96,7 +100,11 @@ class SNSET_Redirects
         $html_out .= '<option value="admin" ' . selected('admin', esc_attr($snillrik_settings_redirectlogout_page),false) . '>Admin</option>';
         if ($pages = get_pages()) {
             foreach ($pages as $page) {
-                $html_out .= '<option value="' . intval($page->ID) . '" ' . selected(intval($page->ID), esc_attr($snillrik_settings_redirectlogout_page),false) . '>' . esc_attr($page->post_title) . '</option>';
+                $page_name = $page->post_title;
+                if (strlen($page_name) > 23) {
+                    $page_name = substr($page_name, 0, 23) . "...";
+                }
+                $html_out .= '<option value="' . intval($page->ID) . '" ' . selected(intval($page->ID), esc_attr($snillrik_settings_redirectlogout_page),false) . '>' . esc_attr($page_name) . '</option>';
             }
         }
         $html_out .= '</select>';
@@ -119,7 +127,11 @@ class SNSET_Redirects
         $html_out .= '<option value="admin" ' . selected('admin', esc_attr($snillrik_settings_redirectprofile_page),false) . '>Admin</option>';
         if ($pages = get_pages()) {
             foreach ($pages as $page) {
-                $html_out .= '<option value="' . intval($page->ID) . '" ' . selected(intval($page->ID), esc_attr($snillrik_settings_redirectprofile_page),false) . '>' . esc_attr($page->post_title) . '</option>';
+                $page_name = $page->post_title;
+                if (strlen($page_name) > 23) {
+                    $page_name = substr($page_name, 0, 23) . "...";
+                }
+                $html_out .= '<option value="' . intval($page->ID) . '" ' . selected(intval($page->ID), esc_attr($snillrik_settings_redirectprofile_page),false) . '>' . esc_attr($page_name) . '</option>';
             }
         }
         $html_out .= '</select>';
