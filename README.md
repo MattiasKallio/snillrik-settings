@@ -48,6 +48,8 @@ In themes like the Twentytwentytwo it's really hard to find the link to the cust
 
 1.1.4 -2023-03-29
 Had to be able to turn off the admin toolbar in frontend, but show it for a couple of roles. So added a setting for that.
+Prettyfying UI
+Test compability with WP 6.2
 
 1.1.3 -2023-03-27
 Added a link to the settings page in the plugins page.

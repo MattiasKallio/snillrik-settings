@@ -130,40 +130,6 @@ function snillrik_settings_page()
 
 			</div>
 		</div>
-		<div class="snillrik-main-right-side">
-			<div class="snillrik-main-side-inner">
-				<div class="snillrik-main-side-block">
-					<div>
-						<h3>Snillrik Dudes</h3>
-						<img src="<?php echo SNILLRIK_SETTINGS_PLUGIN_URL . '/images/dudes.png'; ?>" alt="Snillrik Dudes" class="snillrik-dudes" />
-						<h4>Manage your co-workers with ease</h4>
-						<p>Well, at least how they are presented on your site. Dudes is a plugin for managing people or companies on your site.</p>
-						<p>Read more and buy it on <a href="https://codecanyon.net/item/dudes/35819561">CodeCanyon</a>.</p>
-					</div>
-					<div>
-						<h3>Snillrik Settings</h3>
-						<img src="<?php echo SNILLRIK_SETTINGS_PLUGIN_URL . '/images/snillrik_icon.svg'; ?>" alt="Snillrik icon" />
-						<h4>Manage your settings with ease</h4>
-						<p>Yes, everything is done with ease. :D But this plugin also free! I build a lot of websites, and I often do the same hacks, hooks, filters and things for common things. So I made a plugin for those settings. Maybe you want to use it too. :)</p>
-						<p>Read more and download it (for free!) from <a href="https://wordpress.org/plugins/snillrik-settings/">WordPress.org</a>.</p>
-					</div>
-					<div>
-						<h3>Snillrik Restaurant</h3>
-						<img src="<?php echo SNILLRIK_SETTINGS_PLUGIN_URL . '/images/snillrik_icon.svg'; ?>" alt="Snillrik icon" />
-						<h4>Manage your dishes and menus with ease</h4>
-						<p>Yes, everything is done with ease. :D But this plugin also free! The idea is to add dishes with prices, etc. And then select them for menues. It can be used in many ways, but it's especially great for Today's special and menues that change from day to day.</p>
-						<p>Read more and download it (for free!) from <a href="https://wordpress.org/plugins/snillrik-restaurant-menu/">WordPress.org</a>.</p>
-					</div>
-					<div>
-						<h3>Skolmaten</h3>
-						<img src="<?php echo SNILLRIK_SETTINGS_PLUGIN_URL . '/images/snillrik_icon.svg'; ?>" alt="Snillrik icon" />
-						<h4>Mange your school's lunch menu with ease</h4>
-						<p>If your school are using the service Skolmaten.se, then this plugin is for you. It will show the lunch menu for the week, and also the lunch menu for today. You can also choose to show the lunch menu for a specific week.</p>
-						<p>Read more and download it, (for free!) from <a href="https://wordpress.org/plugins/skolmaten/">WordPress.org</a>.</p>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 
 <?php } ?>
