@@ -45,6 +45,9 @@ If WooCommerce is active on the site, you can choose to redirect to Checkout aft
 In themes like the Twentytwentytwo it's really hard to find the link to the customizer. This adds it under Appearance, ...where he belongs!
 
 == Changelog ==
+1.1.5 - 2023-05-08
+CSS fix for the settings page -fix. 
+Changed the top image for the plugin page.
 
 1.1.4 -2023-03-29
 Had to be able to turn off the admin toolbar in frontend, but show it for a couple of roles. So added a setting for that.
