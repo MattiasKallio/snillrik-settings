@@ -40,11 +40,15 @@ Turn off xmlrpc.php xmlrpc is used to communicate with WP and is mostly not used
 
 ## WooCommerce
 If WooCommerce is active on the site, you can choose to redirect to Checkout after "add to cart", so skipping the cart-part.
+A very simple honeypot-function for the register form.
 
 ## Get the WordPress customizer back
 In themes like the Twentytwentytwo it's really hard to find the link to the customizer. This adds it under Appearance, ...where he belongs!
 
 == Changelog ==
+1.1.7 - 2023-12-13
+Added a very simple honeypot function to the register form.
+
 1.1.5 - 2023-05-08
 CSS fix for the settings page -fix. 
 Changed the top image for the plugin page.
