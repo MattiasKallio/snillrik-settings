@@ -47,6 +47,9 @@ In themes like the Twentytwentytwo it's really hard to find the link to the cust
 
 == Changelog ==
 
+1.2.3 - 2023-12-19
+Code prettyfying and more clever honeypot. Still very simple.
+
 1.2.2 - 2023-12-13
 Bugfix space before start of file sometimes caused error message..
 
