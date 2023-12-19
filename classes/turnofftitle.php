@@ -5,7 +5,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  */
 new SNSET_TurnOffTitle();
 
-class SNSET_TurnOffTitle
+class SNSET_TurnOffTitle extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -39,7 +39,7 @@ class SNSET_TurnOffTitle
             <input type="checkbox" ' . ($turnoffetitle ? "checked" : "") . ' id="snillrik_settings_turnofftitle" name="snillrik_settings_turnofftitle" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        return $html_out;
+        return self::html_out($html_out);
     }
 
     public function title_update($title, $id = null)

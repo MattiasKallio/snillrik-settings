@@ -5,7 +5,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  */
 new SNSET_LoginPage();
 
-class SNSET_LoginPage
+class SNSET_LoginPage extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -26,7 +26,7 @@ class SNSET_LoginPage
         $width = 180;
         $height = $width / $ratio;
 
-        echo '<style type="text/css">' .
+        echo self::html_out('<style type="text/css">' .
             'h1 a {
                     background-image:url(' . $logo_url . ') !important;
                     background-size:100% !important;
@@ -35,7 +35,7 @@ class SNSET_LoginPage
                     line-height:inherit !important;
                     margin:0 auto !important;
                     }' .
-            '</style>';
+            '</style>');
     }
 
     //register the settings
@@ -58,6 +58,7 @@ class SNSET_LoginPage
             <input type="checkbox" ' . ($use_logologo ? "checked" : "") . ' id="snillrik_settings_loginpage_logo" name="snillrik_settings_loginpage_logo" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 }

@@ -5,7 +5,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  */
 new SNSET_Comments();
 
-class SNSET_Comments
+class SNSET_Comments extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -46,7 +46,8 @@ class SNSET_Comments
             <input type="checkbox" ' . ($turnoffcomments ? "checked" : "") . ' id="snillrik_settings_turnoffcomments" name="snillrik_settings_turnoffcomments" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 
     // add the filter 

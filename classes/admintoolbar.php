@@ -5,7 +5,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  */
 new SNSET_AdminToolbar();
 
-class SNSET_AdminToolbar
+class SNSET_AdminToolbar extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -81,6 +81,7 @@ class SNSET_AdminToolbar
         <select name="snillrik_settings_admintoolbar_role[]" id="snillrik_settings_admintoolbar_role" multiple="multiple">
             ' . $select_str . '
         </select>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 }

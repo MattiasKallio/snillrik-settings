@@ -4,8 +4,8 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  * To block all outgoing emails, to ensure that no mails are sent to customers while testing stuff.
  */
 new SNSET_ChangeEmail();
-
-class SNSET_ChangeEmail
+ 
+class SNSET_ChangeEmail extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -53,13 +53,14 @@ class SNSET_ChangeEmail
         $snillrik_settings_change_email = get_option('snillrik_settings_change_email', false);
         $wp_mail_from = get_option('wp_mail_from', false);
         $html_out = '<h3>Default E-mail</h3>
-        <p>Change default email '.$wp_mail_from.'</p>
+        <p>Change default email '.$wp_mail_from.' so that when mails are sent from the site it from the name and email below.</p>
         <label class="' . SNILLRIK_SETTINGS_SWITCHNAME . '">
             <input type="checkbox" ' . ($changeemail ? "checked" : "") . ' id="snillrik_settings_changeemail" name="snillrik_settings_changeemail" />
             <div class="snillrik-settings-slider"></div>
         </label><br><br>
         <input type="text" value="' . esc_attr($snillrik_settings_change_name) . '" id="snillrik_settings_change_name" name="snillrik_settings_change_name" autocomplete="site-name" placeholder="'.esc_attr__("Name",SNILLRIK_SETTINGS_NAME).'" />
         <input type="email" value="' . esc_attr($snillrik_settings_change_email) . '" id="snillrik_settings_change_email" name="snillrik_settings_change_email" autocomplete="email" placeholder="'.esc_attr__("Email",SNILLRIK_SETTINGS_NAME).'" />';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 }

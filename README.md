@@ -46,6 +46,16 @@ A very simple honeypot-function for the register form.
 In themes like the Twentytwentytwo it's really hard to find the link to the customizer. This adds it under Appearance, ...where he belongs!
 
 == Changelog ==
+
+1.2.2 - 2023-12-13
+Bugfix space before start of file sometimes caused error message..
+
+1.2.1 - 2023-12-13
+Bugfix missing file.
+
+1.2.0 - 2023-12-13
+Some code prettyfying and minor security fixes.
+
 1.1.7 - 2023-12-13
 Added a very simple honeypot function to the register form.
 

@@ -6,7 +6,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
 
 new SNSET_Redirects();
 
-class SNSET_Redirects
+class SNSET_Redirects extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -81,7 +81,8 @@ class SNSET_Redirects
             }
         }
         $html_out .= '</select>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 
     public static function logout_html()
@@ -108,7 +109,8 @@ class SNSET_Redirects
             }
         }
         $html_out .= '</select>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 
     public static function profile_html()
@@ -135,7 +137,8 @@ class SNSET_Redirects
             }
         }
         $html_out .= '</select>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 
     //Redirecting to the page.

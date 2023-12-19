@@ -5,7 +5,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  */
 new SNSET_ClassicWidgets();
 
-class SNSET_ClassicWidgets
+class SNSET_ClassicWidgets extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -40,6 +40,7 @@ class SNSET_ClassicWidgets
             <input type="checkbox" ' . ($classicwidgets ? "checked" : "") . ' id="snillrik_settings_classicwidgets" name="snillrik_settings_classicwidgets" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 }

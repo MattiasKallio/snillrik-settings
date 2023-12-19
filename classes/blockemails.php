@@ -5,7 +5,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  */
 new SNSET_BlockEmail();
 
-class SNSET_BlockEmail
+class SNSET_BlockEmail extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -59,6 +59,7 @@ class SNSET_BlockEmail
             <div class="snillrik-settings-slider"></div>
         </label>
         <input type="text" value="' . esc_attr($snillrik_settings_turnoffemail_email) . '" id="snillrik_settings_turnoffemail_email" name="snillrik_settings_turnoffemail_email" autocomplete="email" />';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 }

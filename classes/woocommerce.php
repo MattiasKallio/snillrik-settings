@@ -6,7 +6,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
 
 new SNSET_WooCommerce();
 
-class SNSET_WooCommerce
+class SNSET_WooCommerce extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -27,8 +27,7 @@ class SNSET_WooCommerce
     function register_form_honeypot()
     {
         $snillrik_settings_simplehoneypot_name = get_option('snillrik_settings_simplehoneypot_name', 'repeat_email_field');
-
-        echo '<input type="text" name="'.$snillrik_settings_simplehoneypot_name.'" value="" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px;">';
+        echo self::html_out('<input type="text" name="'.$snillrik_settings_simplehoneypot_name.'" value="" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px;">');
     }
 
     function register_form_honeypot_check($errors, $username, $email)
@@ -36,7 +35,7 @@ class SNSET_WooCommerce
         $snillrik_settings_simplehoneypot_name = get_option('snillrik_settings_simplehoneypot_name', 'repeat_email_field');
 
         if (isset($_POST[$snillrik_settings_simplehoneypot_name]) && !empty($_POST[$snillrik_settings_simplehoneypot_name])) {
-            $errors->add('registration-error-invalid-honeypot', 'Yeah, no. Nice try.');
+            $errors->add('registration-error-invalid-honeypot', esc_attr__('Yeah, no. Nice try robot.', SNILLRIK_SETTINGS_NAME));
         }
         return $errors;
     }
@@ -65,7 +64,7 @@ class SNSET_WooCommerce
             $html_out .= '</label>';
 
             $snillrik_settings_simplehoneypot = get_option('snillrik_settings_simplehoneypot', []);
-            $html_out .= '<p>Simple honeypot for registration form</p>';
+            $html_out .= '<p>Simple honeypot for registration form. I\'s a good idea to pick a name that\'s not used for anything else, but also kinda looks like something that could be used.</p>';
             $html_out .= '<label class="' . SNILLRIK_SETTINGS_SWITCHNAME . '">';
             $html_out .= '<input type="checkbox" ' . ($snillrik_settings_simplehoneypot ? "checked" : "") . ' id="snillrik_settings_simplehoneypot" name="snillrik_settings_simplehoneypot" />';
             $html_out .= '<div class="snillrik-settings-slider"></div>';
@@ -73,9 +72,10 @@ class SNSET_WooCommerce
             $snillrik_settings_simplehoneypot_name = get_option('snillrik_settings_simplehoneypot_name', 'repeat_email_field');
             $html_out .= '<input type="text" id="snillrik_settings_simplehoneypot_name" name="snillrik_settings_simplehoneypot_name" value="' . $snillrik_settings_simplehoneypot_name . '" />';
         } else {
-            $html_out .= "(WooCommerce is not activated so this is not in use)";
+            $html_out .= esc_attr("(WooCommerce is not activated so this is not in use)", SNILLRIK_SETTINGS_NAME);
         }
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 
 

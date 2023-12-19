@@ -5,7 +5,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  */
 new SNSET_Customizer();
 
-class SNSET_Customizer
+class SNSET_Customizer extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -42,6 +42,7 @@ class SNSET_Customizer
             <input type="checkbox" ' . ($showcustomizerlinke ? "checked" : "") . ' id="snillrik_settings_customizerlink" name="snillrik_settings_customizerlink" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 }

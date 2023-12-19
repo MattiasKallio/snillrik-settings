@@ -5,7 +5,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  */
 new SNSET_TurnOffXMLRPC();
 
-class SNSET_TurnOffXMLRPC
+class SNSET_TurnOffXMLRPC extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -37,7 +37,8 @@ class SNSET_TurnOffXMLRPC
         $html_out .= '<input type="checkbox" ' . ($turnoffxmlrpc ? "checked" : "") . ' id="snillrik_settings_turnoffxmlrpc" name="snillrik_settings_turnoffxmlrpc" />';
         $html_out .= '<div class="snillrik-settings-slider"></div>';
         $html_out .= '</label>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 
 }

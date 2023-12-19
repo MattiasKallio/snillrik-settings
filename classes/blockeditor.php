@@ -6,7 +6,7 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
 
 new SNSET_Blockeditor();
 
-class SNSET_Blockeditor
+class SNSET_Blockeditor extends SNSET_SettingItem
 {
     public function __construct()
     {
@@ -38,6 +38,7 @@ class SNSET_Blockeditor
             <input type="checkbox" ' . ($turnoffblockeditor ? "checked" : "") . ' id="snillrik_settings_blockeditor" name="snillrik_settings_blockeditor" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        return $html_out;
+        
+        return self::html_out($html_out);
     }
 }
