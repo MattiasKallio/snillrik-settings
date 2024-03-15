@@ -31,6 +31,9 @@ class SNSET_SettingItem
             'em' => array(),
             'strong' => array(),
             'p' => array(),
+            'tr' => array(),
+            'td' => array(),
+            'th' => array(),
             'div' => array(
                 'class' => array()
             ),
@@ -39,6 +42,7 @@ class SNSET_SettingItem
             ),
             'input' => array(
                 'type' => array(),
+                'class' => array(),
                 'checked' => array(),
                 'id' => array(),
                 'name' => array(),
@@ -46,6 +50,14 @@ class SNSET_SettingItem
                 'tabindex' => array(),
                 'autocomplete' => array(),
                 'placeholder' => array(),
+                'style' => array(),
+            ),
+            'button' => array(
+                'type' => array(),
+                'class' => array(),
+                'id' => array(),
+                'name' => array(),
+                'value' => array(),
                 'style' => array(),
             ),
             'select' => array(

@@ -8,4 +8,7 @@ jQuery(document).ready(function($) {
             inputten.prop('checked', true)
         }
     });
+    jQuery(document).ready(function($){
+        $('.snset-color-field').wpColorPicker();
+    });
 });

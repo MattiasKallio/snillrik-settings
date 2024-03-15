@@ -45,7 +45,24 @@ A very simple honeypot-function for the register form.
 ## Get the WordPress customizer back
 In themes like the Twentytwentytwo it's really hard to find the link to the customizer. This adds it under Appearance, ...where he belongs!
 
+## Colors for Categories.
+Add a color field to the category to be able to add a background color to the category. you get it by using something like this:
+```php
+get_term_meta( $post_term_id, 'category_color', true )
+```
+It has a filter for what taxonomies to use, so it can be used for other taxonomies than categories.
+
+```php
+add_filter("snset_categories_for_categorycolor", function ($taxonomies) {
+    $taxonomies[] = "dude-type";
+    return $taxonomies;
+}, 10, 1);
+```
+
 == Changelog ==
+
+1.2.4 - 2024-03-12
+Added a color field to the category.
 
 1.2.3 - 2023-12-19
 Code prettyfying and more clever honeypot. Still very simple.

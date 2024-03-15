@@ -22,7 +22,7 @@ function snillrik_settings_create_menu()
  */
 function snillrik_settings_page()
 {
-	$snillrik_logo = SNILLRIK_SETTINGS_PLUGIN_URL.'/images/snillrik_logo_modern.svg';
+	$snillrik_logo = SNILLRIK_SETTINGS_PLUGIN_URL . '/images/snillrik_logo_modern.svg';
 ?>
 
 	<div class="wrap snillrik-main-wrap">
@@ -60,8 +60,6 @@ function snillrik_settings_page()
 								</div>
 							</div>
 						</div>
-
-
 						<div class="snillrik-settings-row">
 							<div class="snillrik-settings-item">
 								<div class="snillrik-settings-item-inner">
@@ -124,6 +122,13 @@ function snillrik_settings_page()
 						</div>
 					</div>
 
+					<div class="snillrik-settings-row">
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php echo SNSET_CategoryColor::settings_html(); ?>
+								</div>
+							</div>
+					</div>
 
 					<?php submit_button(); ?>
 				</form>
