@@ -33,8 +33,8 @@ require_once SNILLRIK_SETTINGS_DIR . 'classes/categorycolor.php';
 function snillrik_settings_addCSScripts()
 {
 	wp_enqueue_style('wp-color-picker');
-	wp_enqueue_script(SNILLRIK_SETTINGS_NAME . '-script', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/snillrik-settings.js', array('jquery'));
 	wp_enqueue_script('jscolor', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/jscolor.min.js', array('jquery'));
+	wp_enqueue_script(SNILLRIK_SETTINGS_NAME . '-script', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/snillrik-settings.js', array('jquery','wp-color-picker'));
 	wp_enqueue_style('snillrik-admin-settings', SNILLRIK_SETTINGS_PLUGIN_URL . 'css/settings-page.css');
 	wp_enqueue_style(SNILLRIK_SETTINGS_NAME . '-main', SNILLRIK_SETTINGS_PLUGIN_URL . 'css/snillrik-settings.css');
 }

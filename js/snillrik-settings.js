@@ -1,6 +1,6 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     //console.log("loaded");
-    $(".snillrik-settings-switch").on("click", function() {
+    $(".snillrik-settings-switch").on("click", function () {
         var inputten = $(this).find("input[type=checkbox]");
         if (inputten.is(':checked'))
             inputten.prop('checked', false)
@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
             inputten.prop('checked', true)
         }
     });
-    jQuery(document).ready(function($){
-        $('.snset-color-field').wpColorPicker();
-    });
+
+    $('.snset-color-field').wpColorPicker();
+
 });
