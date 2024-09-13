@@ -45,10 +45,15 @@ class SNSET_AdminToolbar extends SNSET_SettingItem
             'type' => 'array',
             'sanitize_callback' => function ($arr) {
                 $new_arr = array();
+                
+                if(!is_array($arr))
+                    return false;
+
                 foreach ($arr as $key => $value) {
                     if(is_string($value) && $value!="")
                         $new_arr[$key] = sanitize_text_field($value);
                 }
+                
                 return count($new_arr) > 0 ? $new_arr : false;
             },
         );

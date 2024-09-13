@@ -12,7 +12,7 @@ class SNSET_LoginPage extends SNSET_SettingItem
         add_action('admin_init', [$this, 'register']);
         $customlogo = get_option('snillrik_settings_loginpage_logo', array());
         if ($customlogo == "on") {
-            add_action('login_head', [$this,'custom_login_logo']);
+            add_action('login_head', [$this, 'custom_login_logo']);
         }
     }
 
@@ -21,21 +21,25 @@ class SNSET_LoginPage extends SNSET_SettingItem
         //get wordpress logo url
         $icon_vs_logo = true ? 'custom_logo' : 'site_icon';
         $logo_ob = wp_get_attachment_image_src(get_theme_mod($icon_vs_logo), 'full');
-        $logo_url = esc_url($logo_ob[0]);
-        $ratio = is_numeric($logo_ob[1]) && is_numeric($logo_ob[2]) ? $logo_ob[1] / $logo_ob[2] : 1;
-        $width = 180;
-        $height = $width / $ratio;
+        if ($logo_ob) {
+            $logo_ob = wp_get_attachment_image_src(get_option('site_icon'), 'full');
 
-        echo self::html_out('<style type="text/css">' .
-            'h1 a {
+            $logo_url = esc_url($logo_ob[0]);
+            $ratio = is_numeric($logo_ob[1]) && is_numeric($logo_ob[2]) ? $logo_ob[1] / $logo_ob[2] : 1;
+            $width = 180;
+            $height = $width / $ratio;
+
+            echo self::html_out('<style type="text/css">' .
+                'h1 a {
                     background-image:url(' . $logo_url . ') !important;
                     background-size:100% !important;
-                    width: '.$width.'px !important;
-                    height: '.$height.'px !important;
+                    width: ' . $width . 'px !important;
+                    height: ' . $height . 'px !important;
                     line-height:inherit !important;
                     margin:0 auto !important;
                     }' .
-            '</style>');
+                '</style>');
+        }
     }
 
     //register the settings
@@ -58,7 +62,7 @@ class SNSET_LoginPage extends SNSET_SettingItem
             <input type="checkbox" ' . ($use_logologo ? "checked" : "") . ' id="snillrik_settings_loginpage_logo" name="snillrik_settings_loginpage_logo" />
             <div class="snillrik-settings-slider"></div>
         </label>';
-        
+
         return self::html_out($html_out);
     }
 }

@@ -60,6 +60,11 @@ add_filter("snset_categories_for_categorycolor", function ($taxonomies) {
 ```
 
 == Changelog ==
+1.2.6.1 - 2024-08-18
+Minor buggfix login logo if no logo is set.
+
+1.2.5 - 2024-08-15
+Minor buggfix and check with 6.6.1
 
 1.2.4 - 2024-03-12
 Added a color field to the category.
