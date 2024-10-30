@@ -60,6 +60,9 @@ add_filter("snset_categories_for_categorycolor", function ($taxonomies) {
 ```
 
 == Changelog ==
+1.3.0 - 2024-10-30
+Test compability with WP 6.7
+
 1.2.6.1 - 2024-08-18
 Minor buggfix login logo if no logo is set.
 
