@@ -1,6 +1,7 @@
 .snillrik-main-wrap {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     padding: 20px 30px;
     margin: 20px 20px 40px 0;
     border-radius: 10px;

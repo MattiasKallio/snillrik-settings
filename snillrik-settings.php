@@ -31,6 +31,8 @@ require_once SNILLRIK_SETTINGS_DIR . 'classes/customizer.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/woocommerce.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/loginpage.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/categorycolor.php';
+require_once SNILLRIK_SETTINGS_DIR . 'classes/ajax_forceplugins.php';
+require_once SNILLRIK_SETTINGS_DIR . 'classes/ajax_deletetransients.php';
 
 function snillrik_settings_addCSScripts()
 {

@@ -123,16 +123,35 @@ function snillrik_settings_page()
 					</div>
 
 					<div class="snillrik-settings-row">
-							<div class="snillrik-settings-item">
-								<div class="snillrik-settings-item-inner">
-									<?php echo SNSET_CategoryColor::settings_html(); ?>
-								</div>
+						<div class="snillrik-settings-item">
+							<div class="snillrik-settings-item-inner">
+								<?php echo SNSET_CategoryColor::settings_html(); ?>
 							</div>
+						</div>
 					</div>
 
 					<?php submit_button(); ?>
 				</form>
 
+			</div>
+		</div>
+		<div class="ajax-force-plugins">
+			<h2>Setting resetting thing etc.</h2>
+			<div class="snillrik-settings-row">
+				<div class="snillrik-settings-item">
+					<div class="snillrik-settings-item-inner">
+						<h4>Force plugins to update</h4>
+						<p>When you know there's an update but you don't want to wait for it. Resets the transient and checkes for new available updates.</p>
+						<button class="snillrik-force-plugins">Force plugins update</button>
+					</div>
+				</div>
+				<div class="snillrik-settings-item">
+					<div class="snillrik-settings-item-inner">
+						<h4>Delete all transients</h4>
+						<p>Clean the database from transients</p>
+						<button class="snillrik-delete-transients">Delete Transients</button>
+					</div>
+				</div>				
 			</div>
 		</div>
 	</div>
