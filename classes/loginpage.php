@@ -19,11 +19,12 @@ class SNSET_LoginPage extends SNSET_SettingItem
     public function custom_login_logo()
     {
         //get wordpress logo url
-        $icon_vs_logo = true ? 'custom_logo' : 'site_icon';
+        $icon_vs_logo = false ? 'custom_logo' : 'site_icon';
         $logo_ob = wp_get_attachment_image_src(get_theme_mod($icon_vs_logo), 'full');
-        if ($logo_ob) {
+        if(!$logo_ob) {
             $logo_ob = wp_get_attachment_image_src(get_option('site_icon'), 'full');
-
+        }
+        if ($logo_ob) {
             $logo_url = esc_url($logo_ob[0]);
             $ratio = is_numeric($logo_ob[1]) && is_numeric($logo_ob[2]) ? $logo_ob[1] / $logo_ob[2] : 1;
             $width = 180;
@@ -39,7 +40,7 @@ class SNSET_LoginPage extends SNSET_SettingItem
                     margin:0 auto !important;
                     }' .
                 '</style>');
-        }
+       } 
     }
 
     //register the settings
