@@ -3,12 +3,12 @@
 Plugin Name: Snillrik Settings
 Plugin URI: http://www.snillrik.se/
 Description: Snillrik settings is a plugin for som basic settings like turning of Gutenberg, adding css, turning of comments etc.
-Version: 1.3.0
+Version: 1.3.0.1
 Author: Mattias Kallio
 Author URI: http://www.snillrik.se
 License: GPL2
 Requires at least: 4.5
-Tested up to: 6.7
+Tested up to: 6.7.1
  */
 
 DEFINE("SNILLRIK_SETTINGS_PLUGIN_URL", plugin_dir_url(__FILE__));
