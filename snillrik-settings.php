@@ -8,7 +8,7 @@ Author: Mattias Kallio
 Author URI: http://www.snillrik.se
 License: GPL2
 Requires at least: 4.5
-Tested up to: 6.7.1
+Tested up to: 6.7.2
  */
 
 DEFINE("SNILLRIK_SETTINGS_PLUGIN_URL", plugin_dir_url(__FILE__));
