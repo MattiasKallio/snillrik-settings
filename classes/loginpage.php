@@ -13,6 +13,7 @@ class SNSET_LoginPage extends SNSET_SettingItem
         $customlogo = get_option('snillrik_settings_loginpage_logo', array());
         if ($customlogo == "on") {
             add_action('login_head', [$this, 'custom_login_logo']);
+            add_action( 'login_headerurl', [$this, 'custom_login_url'] );
         }
     }
 
@@ -38,9 +39,14 @@ class SNSET_LoginPage extends SNSET_SettingItem
                     height: ' . $height . 'px !important;
                     line-height:inherit !important;
                     margin:0 auto !important;
+                    margin-bottom: 10px !important;
                     }' .
                 '</style>');
        } 
+    }
+
+    public function custom_login_url() {
+        return home_url();
     }
 
     //register the settings
