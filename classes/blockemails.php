@@ -37,6 +37,8 @@ class SNSET_BlockEmail extends SNSET_SettingItem
         $admin_email = $blockemailemail ? $blockemailemail : get_site_option('admin_email');
         
         if (isset($mail_args['to']) && $admin_email !== $mail_args['to']) {
+            $to_to_string = is_array($mail_args['to']) ? implode(", ", $mail_args['to']) : $mail_args['to'];
+            $mail_args['to'] = $to_to_string;
             $mail_args['message'] = 'Was intended for: ' . sanitize_email($mail_args['to']) . "\n\n" . sanitize_text_field($mail_args['message']);
             $mail_args['subject'] = 'Redirected by Snillrik-plugin | ' . sanitize_text_field($mail_args['subject']);
             $mail_args['to'] = sanitize_email($admin_email);
