@@ -3,12 +3,12 @@
 Plugin Name: Snillrik Settings
 Plugin URI: http://www.snillrik.se/
 Description: Snillrik settings is a plugin for som basic settings like turning of Gutenberg, adding css, turning of comments etc.
-Version: 1.3.0.1
+Version: 1.4.0
 Author: Mattias Kallio
 Author URI: http://www.snillrik.se
 License: GPL2
 Requires at least: 4.5
-Tested up to: 6.7.2
+Tested up to: 6.8
  */
 
 DEFINE("SNILLRIK_SETTINGS_PLUGIN_URL", plugin_dir_url(__FILE__));
@@ -33,6 +33,7 @@ require_once SNILLRIK_SETTINGS_DIR . 'classes/loginpage.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/categorycolor.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/ajax_forceplugins.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/ajax_deletetransients.php';
+require_once SNILLRIK_SETTINGS_DIR . 'classes/turnoffspeculation.php';
 
 function snillrik_settings_addCSScripts()
 {

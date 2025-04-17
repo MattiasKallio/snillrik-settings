@@ -26,6 +26,7 @@ class SNSET_SettingItem
                 'title' => array()
             ),
             'h3' => array(),
+            'h4' => array(),
             'h1' => array(),
             'br' => array(),
             'em' => array(),
