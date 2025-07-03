@@ -10,11 +10,13 @@ License: GPL2
 Requires at least: 4.5
 Tested up to: 6.8
  */
+defined('ABSPATH') or die('This script cannot be accessed directly.');
 
 DEFINE("SNILLRIK_SETTINGS_PLUGIN_URL", plugin_dir_url(__FILE__));
 DEFINE("SNILLRIK_SETTINGS_DIR", plugin_dir_path(__FILE__));
 DEFINE("SNILLRIK_SETTINGS_NAME", "snillrik-settings");
 DEFINE("SNILLRIK_SETTINGS_SWITCHNAME", SNILLRIK_SETTINGS_NAME . "-switch");
+
 
 require_once SNILLRIK_SETTINGS_DIR . 'settings.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/setting_item.php';
@@ -34,6 +36,8 @@ require_once SNILLRIK_SETTINGS_DIR . 'classes/categorycolor.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/ajax_forceplugins.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/ajax_deletetransients.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/turnoffspeculation.php';
+require_once SNILLRIK_SETTINGS_DIR . 'classes/uploads.php';
+require_once SNILLRIK_SETTINGS_DIR . 'classes/turoffwpemoji.php';
 
 function snillrik_settings_addCSScripts()
 {

@@ -7,10 +7,11 @@ new SNSET_Customizer();
 
 class SNSET_Customizer extends SNSET_SettingItem
 {
+    const SETTING_NAME = 'snillrik_settings_customizerlink';
     public function __construct()
     {
         add_action('admin_init', [$this, 'register']);
-        $showcustomizerlinke = get_option('snillrik_settings_customizerlink', array());
+        $showcustomizerlinke = get_option(self::SETTING_NAME, array());
         if ($showcustomizerlinke == 'on') {
             add_action('admin_init', [$this, 'snillrik_customizer_link']);
         }
@@ -29,17 +30,17 @@ class SNSET_Customizer extends SNSET_SettingItem
             'type' => 'string',
             'sanitize_callback' => 'sanitize_text_field',
         );
-        register_setting('snillrik-settings-group', 'snillrik_settings_customizerlink', $sanitize_args_str);
+        register_setting('snillrik-settings-group', self::SETTING_NAME, $sanitize_args_str);
     }
 
     //html for the settings page
     public static function settings_html()
     {
-        $showcustomizerlinke = get_option('snillrik_settings_customizerlink', array());
+        $showcustomizerlinke = get_option(self::SETTING_NAME, array());
         $html_out = '<h3>Customizer link</h3>
         <p>If you\'re using TwentyTwentyTwo and want the customizer back (or at least the custom css)</p>
         <label class="' . SNILLRIK_SETTINGS_SWITCHNAME . '">
-            <input type="checkbox" ' . ($showcustomizerlinke ? "checked" : "") . ' id="snillrik_settings_customizerlink" name="snillrik_settings_customizerlink" />
+            <input type="checkbox" ' . ($showcustomizerlinke ? "checked" : "") . ' id="' . self::SETTING_NAME . '" name="' . self::SETTING_NAME . '" />
             <div class="snillrik-settings-slider"></div>
         </label>';
         

@@ -4,18 +4,18 @@ defined('ABSPATH') or die('This script cannot be accessed directly.');
  * To turn of the block editor.
  */
 
-new SNSET_Blockeditor();
+new SNSET_Uploads();
 
-class SNSET_Blockeditor extends SNSET_SettingItem
+class SNSET_Uploads extends SNSET_SettingItem
 {
-    const SETTING_NAME = 'snillrik_settings_blockeditor';
+    //setting name
+    const SETTING_NAME = 'snillrik_settings_uploads_allow_svg';
     public function __construct()
     {
         add_action('admin_init', [$this, 'register']);
-        $turnoffblockeditor = get_option(self::SETTING_NAME, array());
-        if ($turnoffblockeditor == "on") {
-            add_filter('use_block_editor_for_post', '__return_false', 10);
-            add_filter('use_block_editor_for_post_type', '__return_false', 10);
+        $allow_svg = get_option(self::SETTING_NAME, array());
+        if ($allow_svg == "on") {
+            add_filter('upload_mimes', [$this, 'snillrik_upload_mimes'], 10, 1);
         }
     }
 
@@ -32,14 +32,21 @@ class SNSET_Blockeditor extends SNSET_SettingItem
     //html for the settings page
     public static function settings_html()
     {
-        $turnoffblockeditor = get_option(self::SETTING_NAME, array());
-        $html_out = '<h3>Block editor / Gutenberg</h3>
-        <p>Turn off the block editor.</p>
+        $allow_svg = get_option(self::SETTING_NAME, array());
+        $html_out = '<h3>Allow Media Uploads</h3>
+        <p>Allow SVG uploads.</p>
         <label class="' . SNILLRIK_SETTINGS_SWITCHNAME . '">
-            <input type="checkbox" ' . ($turnoffblockeditor ? "checked" : "") . ' id="' . self::SETTING_NAME . '" name="' . self::SETTING_NAME . '" />
+            <input type="checkbox" ' . ($allow_svg ? "checked" : "") . ' id="'.self::SETTING_NAME.'" name="'.self::SETTING_NAME.'" />
             <div class="snillrik-settings-slider"></div>
         </label>';
         
         return self::html_out($html_out);
+    }
+
+    public function snillrik_upload_mimes($mimes)
+    {
+        $mimes['svg'] = 'image/svg+xml';
+        $mimes['svgz'] = 'image/svg+xml';
+        return $mimes;
     }
 }

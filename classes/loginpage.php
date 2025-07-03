@@ -7,10 +7,11 @@ new SNSET_LoginPage();
 
 class SNSET_LoginPage extends SNSET_SettingItem
 {
+    const SETTING_NAME = 'snillrik_settings_loginpage_logo';
     public function __construct()
     {
         add_action('admin_init', [$this, 'register']);
-        $customlogo = get_option('snillrik_settings_loginpage_logo', array());
+        $customlogo = get_option(self::SETTING_NAME, array());
         if ($customlogo == "on") {
             add_action('login_head', [$this, 'custom_login_logo']);
             add_action( 'login_headerurl', [$this, 'custom_login_url'] );
@@ -56,17 +57,17 @@ class SNSET_LoginPage extends SNSET_SettingItem
             'type' => 'string',
             'sanitize_callback' => 'sanitize_text_field',
         );
-        register_setting('snillrik-settings-group', 'snillrik_settings_loginpage_logo', $sanitize_args_str);
+        register_setting('snillrik-settings-group', self::SETTING_NAME, $sanitize_args_str);
     }
 
     //html for the settings page
     public static function settings_html()
     {
-        $use_logologo = get_option('snillrik_settings_loginpage_logo', array());
+        $use_logologo = get_option(self::SETTING_NAME, array());
         $html_out = '<h3>Login logoype</h3>
         <p>Use the logotype set in the customizer on the login page instead of the default WP logo.</p>
         <label class="' . SNILLRIK_SETTINGS_SWITCHNAME . '">
-            <input type="checkbox" ' . ($use_logologo ? "checked" : "") . ' id="snillrik_settings_loginpage_logo" name="snillrik_settings_loginpage_logo" />
+            <input type="checkbox" ' . ($use_logologo ? "checked" : "") . ' id="' . self::SETTING_NAME . '" name="' . self::SETTING_NAME . '" />
             <div class="snillrik-settings-slider"></div>
         </label>';
 

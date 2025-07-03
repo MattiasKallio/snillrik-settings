@@ -58,7 +58,7 @@ function snillrik_settings_page()
 								<div class="snillrik-settings-item-inner">
 									<?php echo SNSET_Customizer::settings_html(); ?>
 								</div>
-							</div>						
+							</div>
 						</div>
 						<div class="snillrik-settings-row">
 							<div class="snillrik-settings-item">
@@ -113,26 +113,36 @@ function snillrik_settings_page()
 								<div class="snillrik-settings-item-inner">
 									<?php echo SNSET_TurnOffSpcualtive::settings_html(); ?>
 								</div>
-							</div>								
+							</div>
 							<div class="snillrik-settings-item">
 								<div class="snillrik-settings-item-inner">
-									<?php echo SNSET_TurnOffTitle::settings_html(); ?>
+									<?php echo SNSET_Uploads::settings_html(); ?>
 								</div>
-							</div>
+							</div>							
 						</div>
 					</div>
 
 					<div class="snillrik-settings-row">
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php echo SNSET_Emojis::settings_html(); ?>
+								</div>
+							</div>						
 						<div class="snillrik-settings-item">
 							<div class="snillrik-settings-item-inner">
 								<?php echo SNSET_CategoryColor::settings_html(); ?>
-							</div>						
+							</div>
 						</div>
 						<div class="snillrik-settings-item">
-								<div class="snillrik-settings-item-inner">
-									<?php echo SNSET_WooCommerce::settings_html(); ?>
-								</div>
-							</div>							
+							<div class="snillrik-settings-item-inner">
+								<?php echo SNSET_TurnOffTitle::settings_html(); ?>
+							</div>
+						</div>
+						<div class="snillrik-settings-item">
+							<div class="snillrik-settings-item-inner">
+								<?php echo SNSET_WooCommerce::settings_html(); ?>
+							</div>
+						</div>						
 					</div>
 
 					<?php submit_button(); ?>
@@ -156,7 +166,7 @@ function snillrik_settings_page()
 						<p>Clean the database from transients</p>
 						<button class="snillrik-delete-transients">Delete Transients</button>
 					</div>
-				</div>				
+				</div>
 			</div>
 		</div>
 	</div>
