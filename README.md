@@ -45,6 +45,15 @@ A very simple honeypot-function for the register form.
 ## Get the WordPress customizer back
 In themes like the Twentytwentytwo it's really hard to find the link to the customizer. This adds it under Appearance, ...where he belongs!
 
+## Speculation loading
+Settings for speculation loading. This is a performance improvement that loads some scripts and styles in the background, so they are ready when needed. It can be turned off if you don't want it.
+
+## Remove WP Emoji
+Remove the WP Emoji script and styles. This is a performance improvement, since it removes a lot of unnecessary code that is loaded on every page.
+
+## Allow SVG uploads
+Allow SVG uploads to the media library. This is a security risk, so use it with caution. It allows you to upload SVG files, which can be used for icons and other graphics.
+
 ## Colors for Categories.
 Add a color field to the category to be able to add a background color to the category. you get it by using something like this:
 ```php
@@ -60,6 +69,15 @@ add_filter("snset_categories_for_categorycolor", function ($taxonomies) {
 ```
 
 == Changelog ==
+1.4.5 - 2025-07-03
+Test compability with WP 6.8.2
+Added upload for SVG and removed WP Emoji.
+Some minor code structure changes.
+
+1.4.0 - 2025-04-17
+Test compability with WP 6.8
+Added a setting for turning off specualtion loading.
+
 1.3.0.1 - 2025-01-17
 Fixed login logo that did not work on multisites.
 
