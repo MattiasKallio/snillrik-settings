@@ -69,6 +69,10 @@ add_filter("snset_categories_for_categorycolor", function ($taxonomies) {
 ```
 
 == Changelog ==
+1.4.6 - 2025-12-04
+Test compability with WP 6.9
+Minor code changes.
+
 1.4.5 - 2025-07-03
 Test compability with WP 6.8.2
 Added upload for SVG and removed WP Emoji.
