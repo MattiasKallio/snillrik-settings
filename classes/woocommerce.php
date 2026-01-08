@@ -27,15 +27,18 @@ class SNSET_WooCommerce extends SNSET_SettingItem
     function register_form_honeypot()
     {
         $snillrik_settings_simplehoneypot_name = get_option('snillrik_settings_simplehoneypot_name', 'repeat_email_field');
-        echo self::html_out('<input type="text" name="'.$snillrik_settings_simplehoneypot_name.'" value="" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px;">');
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+        echo self::html_out('<input type="text" name="'.esc_attr($snillrik_settings_simplehoneypot_name).'" value="" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px;">');
     }
 
     function register_form_honeypot_check($errors, $username, $email)
     {
         $snillrik_settings_simplehoneypot_name = get_option('snillrik_settings_simplehoneypot_name', 'repeat_email_field');
-
-        if (isset($_POST[$snillrik_settings_simplehoneypot_name]) && !empty($_POST[$snillrik_settings_simplehoneypot_name])) {
-            $errors->add('registration-error-invalid-honeypot', esc_attr__('Yeah, no. Nice try robot.', SNILLRIK_SETTINGS_NAME));
+        $snillrik_settings_simplehoneypot_postname = sanitize_text_field($snillrik_settings_simplehoneypot_name);
+        
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing -- WooCommerce handles nonce verification in registration process
+        if (isset($_POST[$snillrik_settings_simplehoneypot_postname]) && !empty(sanitize_text_field(wp_unslash($_POST[$snillrik_settings_simplehoneypot_postname])))) {
+            $errors->add('registration-error-invalid-honeypot', esc_attr__('Yeah, no. Nice try robot.', "snillrik-settings"));
         }
         return $errors;
     }
@@ -72,7 +75,7 @@ class SNSET_WooCommerce extends SNSET_SettingItem
             $snillrik_settings_simplehoneypot_name = get_option('snillrik_settings_simplehoneypot_name', 'repeat_email_field');
             $html_out .= '<input type="text" id="snillrik_settings_simplehoneypot_name" name="snillrik_settings_simplehoneypot_name" value="' . $snillrik_settings_simplehoneypot_name . '" />';
         } else {
-            $html_out .= esc_attr("(WooCommerce is not activated so this is not in use)", SNILLRIK_SETTINGS_NAME);
+            $html_out .= esc_attr__("(WooCommerce is not activated so this is not in use)", "snillrik-settings");
         }
         
         return self::html_out($html_out);

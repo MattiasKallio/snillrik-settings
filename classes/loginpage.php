@@ -32,12 +32,13 @@ class SNSET_LoginPage extends SNSET_SettingItem
             $width = 180;
             $height = $width / $ratio;
 
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
             echo self::html_out('<style type="text/css">' .
                 'h1 a {
-                    background-image:url(' . $logo_url . ') !important;
+                    background-image:url(' . esc_url($logo_url) . ') !important;
                     background-size:100% !important;
-                    width: ' . $width . 'px !important;
-                    height: ' . $height . 'px !important;
+                    width: ' . absint($width) . 'px !important;
+                    height: ' . absint($height) . 'px !important;
                     line-height:inherit !important;
                     margin:0 auto !important;
                     margin-bottom: 10px !important;

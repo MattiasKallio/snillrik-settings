@@ -1,0 +1,29 @@
+# Exclude version control
+.git
+.gitignore
+.github
+
+# Exclude development files
+.history
+node_modules
+.vscode
+.idea
+
+# Exclude build files
+*.map
+*.log
+
+# Exclude documentation
+README.md
+
+# Exclude package managers
+package.json
+package-lock.json
+composer.json
+composer.lock
+
+# Exclude other development files
+.editorconfig
+.eslintrc
+.phpcs.xml
+phpcs.xml

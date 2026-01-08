@@ -20,7 +20,7 @@ class SNSET_Customizer extends SNSET_SettingItem
     public function snillrik_customizer_link()
     {
         global $submenu;
-        $submenu['themes.php'][] = [esc_attr__('Customize'), 'edit_theme_options', 'customize.php'];
+        $submenu['themes.php'][] = [esc_attr__('Customize',"snillrik-settings"), 'edit_theme_options', 'customize.php'];
     }
 
     //register the settings

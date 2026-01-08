@@ -58,8 +58,8 @@ class SNSET_ChangeEmail extends SNSET_SettingItem
             <input type="checkbox" ' . ($changeemail ? "checked" : "") . ' id="snillrik_settings_changeemail" name="snillrik_settings_changeemail" />
             <div class="snillrik-settings-slider"></div>
         </label><br><br>
-        <input type="text" value="' . esc_attr($snillrik_settings_change_name) . '" id="snillrik_settings_change_name" name="snillrik_settings_change_name" autocomplete="site-name" placeholder="'.esc_attr__("Name",SNILLRIK_SETTINGS_NAME).'" />
-        <input type="email" value="' . esc_attr($snillrik_settings_change_email) . '" id="snillrik_settings_change_email" name="snillrik_settings_change_email" autocomplete="email" placeholder="'.esc_attr__("Email",SNILLRIK_SETTINGS_NAME).'" />';
+        <input type="text" value="' . esc_attr($snillrik_settings_change_name) . '" id="snillrik_settings_change_name" name="snillrik_settings_change_name" autocomplete="site-name" placeholder="'.esc_attr__("Name","snillrik-settings").'" />
+        <input type="email" value="' . esc_attr($snillrik_settings_change_email) . '" id="snillrik_settings_change_email" name="snillrik_settings_change_email" autocomplete="email" placeholder="'.esc_attr__("Email","snillrik-settings").'" />';
         
         return self::html_out($html_out);
     }

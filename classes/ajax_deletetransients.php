@@ -17,14 +17,16 @@ class SNSET_AjaxTransients extends SNSET_SettingItem
         global $wpdb;
 
         // delete all "namespace" transients
-        $sql = "
-            DELETE 
-            FROM {$wpdb->options}
-            WHERE option_name like '\_transient\_namespace\_%'
-            OR option_name like '\_transient\_timeout\_namespace\_%'
-        ";
-
-        $wpdb->query($sql);
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Direct DELETE query needed to remove transients by pattern, no WP API available, caching not applicable for DELETE operations
+        $wpdb->query(
+            $wpdb->prepare(
+                "DELETE FROM {$wpdb->options}
+                WHERE option_name LIKE %s
+                OR option_name LIKE %s",
+                $wpdb->esc_like('_transient_namespace_') . '%',
+                $wpdb->esc_like('_transient_timeout_namespace_') . '%'
+            )
+        );
 
         wp_send_json_success("Transients removed");
     }

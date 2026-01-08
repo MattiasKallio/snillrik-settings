@@ -47,6 +47,8 @@ class SNSET_CategoryColor extends SNSET_SettingItem
             <input type="checkbox" ' . ($turnoncatcolor ? "checked" : "") . ' id="snillrik_settings_categorycolor" name="snillrik_settings_categorycolor">
             <div class="snillrik-settings-slider"></div>
         </label>';
+
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
         echo self::html_out($html_out);
     }
 
@@ -56,16 +58,24 @@ class SNSET_CategoryColor extends SNSET_SettingItem
         $html_out = '<div class="form-field">
         <label for="category_color">Color</label>
         <input type="text" name="category_color" id="category_color" class="snset-color-field" value="" />
+        ' . wp_nonce_field('category_color_nonce_action', 'category_color_nonce', true, false) . '
         </div>';
 
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
         echo self::html_out($html_out);
     }
 
     function save_color_field($term_id)
     {
+        // Verify nonce
+        if (!isset($_POST['category_color_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['category_color_nonce'])), 'category_color_nonce_action')) {
+            return;
+        }
+
         if (isset($_POST['category_color'])) {
             //set term meta color
-            update_term_meta($term_id, 'category_color', $_POST['category_color']);
+            $category_color = sanitize_text_field(wp_unslash($_POST['category_color']));
+            update_term_meta($term_id, 'category_color', $category_color);
         }
     }
 
@@ -75,10 +85,12 @@ class SNSET_CategoryColor extends SNSET_SettingItem
         $html_out = '<tr class="form-field">
         <th scope="row" valign="top"><label for="category_color">Color</label></th>
         <td>
-            <input type="text" class="snset-color-field" name="category_color" id="category_color" value="' . $color . '" />
+            <input type="text" class="snset-color-field" name="category_color" id="category_color" value="' . esc_attr($color) . '" />
+            ' . wp_nonce_field('category_color_nonce_action', 'category_color_nonce', true, false) . '
         </td>
         </tr>';
 
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
         echo self::html_out($html_out);
     }
 }

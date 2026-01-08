@@ -69,6 +69,18 @@ add_filter("snset_categories_for_categorycolor", function ($taxonomies) {
 ```
 
 == Changelog ==
+1.5.0 - 2026-01-06
+* Security: Enhanced input validation and sanitization throughout all forms
+* Security: Added nonce verification for category color field operations
+* Security: Improved database query security with $wpdb->prepare() for transient deletion
+* Security: Added wp_unslash() to all POST data handling
+* Improved: Better escaping for all output (esc_attr, esc_url, esc_html)
+* Improved: Added absint() for numeric CSS values in login page
+* Code quality: Added phpcs:ignore comments for validated safe output via wp_kses
+* Code quality: Added phpcs:ignore for WooCommerce nonce (handled by WooCommerce core)
+* Code quality: Added phpcs:ignore for direct database queries where WP API is unavailable
+* Fixed: Proper sanitization of honeypot field in WooCommerce registration form
+
 1.4.6 - 2025-12-04
 Test compability with WP 6.9
 Minor code changes.

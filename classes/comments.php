@@ -93,7 +93,7 @@ class SNSET_Comments extends SNSET_SettingItem
     {
         global $pagenow;
         if ($pagenow === 'edit-comments.php') {
-            wp_redirect(admin_url());
+            wp_safe_redirect(admin_url());
             exit();
         }
     }

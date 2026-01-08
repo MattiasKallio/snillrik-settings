@@ -67,7 +67,7 @@ class SNSET_AdminToolbar extends SNSET_SettingItem
         $turnoffadmintoolbar = get_option('snillrik_settings_admintoolbar', array());
         $admintoolbarroles = get_option('snillrik_settings_admintoolbar_role', array());
         $all_roles = get_editable_roles();
-        $select_str = "<option value=''>" . esc_attr__("No one", SNILLRIK_SETTINGS_NAME) . "</option>";
+        $select_str = "<option value=''>" . esc_attr__("No one", "snillrik-settings") . "</option>";
         foreach ($all_roles as $role => $role_data) {
             $role_name = $role_data['name'];
             $selected = "";
