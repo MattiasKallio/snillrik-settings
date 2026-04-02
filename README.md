@@ -69,6 +69,14 @@ add_filter("snset_categories_for_categorycolor", function ($taxonomies) {
 ```
 
 == Changelog ==
+
+1.5.1 - 2026-03-30
+Feature: Added a setting to turn on maintenance mode, which shows the default WP maintenance page to visitors.
+Tested compatibility with WP 6.9.4
+
+1.5.0.1
+Fixed: settings links in the plugin page did not work.
+
 1.5.0 - 2026-01-06
 * Security: Enhanced input validation and sanitization throughout all forms
 * Security: Added nonce verification for category color field operations

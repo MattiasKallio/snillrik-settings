@@ -43,163 +43,173 @@ function snillrik_settings_page()
 						<div class="snillrik-settings-row">
 							<div class="snillrik-settings-item">
 								<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_Blockeditor::settings_html();
-							?>
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_Blockeditor::settings_html();
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_Classicwidgets::settings_html();
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_Comments::settings_html();
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_Customizer::settings_html();
+									?>
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_Classicwidgets::settings_html();
-							?>
+						<div class="snillrik-settings-row">
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_Redirects::settings_html("login");
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_Redirects::settings_html("logout");
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_Redirects::settings_html("profile");
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_LoginPage::settings_html();
+									?>
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_Comments::settings_html();
-							?>
-						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_Customizer::settings_html();
-							?>
-						</div>
-					</div>
-				</div>
-				<div class="snillrik-settings-row">
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_Redirects::settings_html("login");
-							?>
-						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_Redirects::settings_html("logout");
-							?>
-						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_Redirects::settings_html("profile");
-							?>
-						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_LoginPage::settings_html();
-							?>
-						</div>
-					</div>
-				</div>
 
 
-				<div class="snillrik-settings-row">
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_AdminToolbar::settings_html();
-							?>
+						<div class="snillrik-settings-row">
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_AdminToolbar::settings_html();
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_BlockEmail::settings_html();
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_ChangeEmail::settings_html();
+									?>
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_BlockEmail::settings_html();
-							?>
-						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_ChangeEmail::settings_html();
-							?>
-						</div>
-					</div>
-				</div>
 
 
-				<div class="snillrik-settings-row">
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_TurnOffXMLRPC::settings_html();
-							?>
+						<div class="snillrik-settings-row">
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_TurnOffXMLRPC::settings_html();
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_TurnOffSpcualtive::settings_html();
+									?>
+								</div>
+							</div>
+							<div class="snillrik-settings-item">
+								<div class="snillrik-settings-item-inner">
+									<?php
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+									echo SNSET_Uploads::settings_html();
+									?>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_TurnOffSpcualtive::settings_html();
-							?>
-						</div>
-					</div>
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_Uploads::settings_html();
-							?>
-						</div>
-					</div>							
-				</div>
-			</div>
 
-			<div class="snillrik-settings-row">
-					<div class="snillrik-settings-item">
-						<div class="snillrik-settings-item-inner">
-							<?php
-							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-							echo SNSET_Emojis::settings_html();
-							?>
+					<div class="snillrik-settings-row">
+						<div class="snillrik-settings-item">
+							<div class="snillrik-settings-item-inner">
+								<?php
+								// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+								echo SNSET_Emojis::settings_html();
+								?>
+							</div>
 						</div>
-					</div>						
-				<div class="snillrik-settings-item">
-					<div class="snillrik-settings-item-inner">
-						<?php
-						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-						echo SNSET_CategoryColor::settings_html();
-						?>
+						<div class="snillrik-settings-item">
+							<div class="snillrik-settings-item-inner">
+								<?php
+								// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+								echo SNSET_CategoryColor::settings_html();
+								?>
+							</div>
+						</div>
+						<div class="snillrik-settings-item">
+							<div class="snillrik-settings-item-inner">
+								<?php
+								// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+								echo SNSET_TurnOffTitle::settings_html();
+								?>
+							</div>
+						</div>
+						<div class="snillrik-settings-item">
+							<div class="snillrik-settings-item-inner">
+								<?php
+								// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+								echo SNSET_WooCommerce::settings_html();
+								?>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="snillrik-settings-item">
-					<div class="snillrik-settings-item-inner">
-						<?php
-						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-						echo SNSET_TurnOffTitle::settings_html();
-						?>
+					<div class="snillrik-settings-row">
+						<div class="snillrik-settings-item">
+							<div class="snillrik-settings-item-inner">
+								<?php
+								// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
+								echo SNSET_Maintenance::settings_html();
+								?>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="snillrik-settings-item">
-					<div class="snillrik-settings-item-inner">
-						<?php
-						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already sanitized via wp_kses in html_out()
-						echo SNSET_WooCommerce::settings_html();
-						?>
-					</div>
-				</div>
-			</div>
 					<?php submit_button(); ?>
 				</form>
 

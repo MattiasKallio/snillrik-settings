@@ -3,7 +3,7 @@
 Plugin Name: Snillrik Settings
 Plugin URI: http://www.snillrik.se/
 Description: Snillrik settings is a plugin for som basic settings like turning of Gutenberg, adding css, turning of comments etc.
-Version: 1.5.0
+Version: 1.5.1
 Author: Mattias Kallio
 Author URI: http://www.snillrik.se
 License: GPL2
@@ -16,7 +16,6 @@ DEFINE("SNILLRIK_SETTINGS_PLUGIN_URL", plugin_dir_url(__FILE__));
 DEFINE("SNILLRIK_SETTINGS_DIR", plugin_dir_path(__FILE__));
 DEFINE("SNILLRIK_SETTINGS_NAME", "snillrik-settings");
 DEFINE("SNILLRIK_SETTINGS_SWITCHNAME", SNILLRIK_SETTINGS_NAME . "-switch");
-
 
 require_once SNILLRIK_SETTINGS_DIR . 'settings.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/setting_item.php';
@@ -38,6 +37,7 @@ require_once SNILLRIK_SETTINGS_DIR . 'classes/ajax_deletetransients.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/turnoffspeculation.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/uploads.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/turoffwpemoji.php';
+require_once SNILLRIK_SETTINGS_DIR . 'classes/maintenance.php';
 
 function snillrik_settings_addCSScripts()
 {
@@ -51,7 +51,7 @@ function snillrik_settings_addCSScripts()
 add_action('admin_enqueue_scripts', 'snillrik_settings_addCSScripts');
 
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), function($links){
-	$url = esc_url(add_query_arg('page','snillrik-settings/settings.php',get_admin_url() . 'admin.php'));
+	$url = esc_url(add_query_arg('page','snillrik-settings',get_admin_url() . 'admin.php'));
 	$settings_link = "<a href='$url'>" . __('Settings',"snillrik-settings") . '</a>';
 	array_push($links,$settings_link);
 	return $links;
