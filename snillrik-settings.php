@@ -3,12 +3,12 @@
 Plugin Name: Snillrik Settings
 Plugin URI: http://www.snillrik.se/
 Description: Snillrik settings is a plugin for som basic settings like turning of Gutenberg, adding css, turning of comments etc.
-Version: 1.5.1
+Version: 1.5.2
 Author: Mattias Kallio
 Author URI: http://www.snillrik.se
 License: GPL2
 Requires at least: 4.5
-Tested up to: 6.9
+Tested up to: 7.0
  */
 defined('ABSPATH') or die('This script cannot be accessed directly.');
 
@@ -16,6 +16,7 @@ DEFINE("SNILLRIK_SETTINGS_PLUGIN_URL", plugin_dir_url(__FILE__));
 DEFINE("SNILLRIK_SETTINGS_DIR", plugin_dir_path(__FILE__));
 DEFINE("SNILLRIK_SETTINGS_NAME", "snillrik-settings");
 DEFINE("SNILLRIK_SETTINGS_SWITCHNAME", SNILLRIK_SETTINGS_NAME . "-switch");
+DEFINE("SNILLRIK_SETTINGS_VERSION", "1.5.2");
 
 require_once SNILLRIK_SETTINGS_DIR . 'settings.php';
 require_once SNILLRIK_SETTINGS_DIR . 'classes/setting_item.php';
@@ -42,10 +43,10 @@ require_once SNILLRIK_SETTINGS_DIR . 'classes/maintenance.php';
 function snillrik_settings_addCSScripts()
 {
 	wp_enqueue_style('wp-color-picker');
-	wp_enqueue_script('jscolor', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/jscolor.min.js', array('jquery'));
-	wp_enqueue_script(SNILLRIK_SETTINGS_NAME . '-script', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/snillrik-settings.js', array('jquery','wp-color-picker'));
-	wp_enqueue_style('snillrik-admin-settings', SNILLRIK_SETTINGS_PLUGIN_URL . 'css/settings-page.css');
-	wp_enqueue_style(SNILLRIK_SETTINGS_NAME . '-main', SNILLRIK_SETTINGS_PLUGIN_URL . 'css/snillrik-settings.css');
+	wp_enqueue_script('jscolor', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/jscolor.min.js', array('jquery'), SNILLRIK_SETTINGS_VERSION, true);
+	wp_enqueue_script(SNILLRIK_SETTINGS_NAME . '-script', SNILLRIK_SETTINGS_PLUGIN_URL . 'js/snillrik-settings.js', array('jquery','wp-color-picker'), SNILLRIK_SETTINGS_VERSION, true);
+	wp_enqueue_style('snillrik-admin-settings', SNILLRIK_SETTINGS_PLUGIN_URL . 'css/settings-page.css', [], SNILLRIK_SETTINGS_VERSION, 'all');
+	wp_enqueue_style(SNILLRIK_SETTINGS_NAME . '-main', SNILLRIK_SETTINGS_PLUGIN_URL . 'css/snillrik-settings.css', [], SNILLRIK_SETTINGS_VERSION, 'all');
 }
 
 add_action('admin_enqueue_scripts', 'snillrik_settings_addCSScripts');

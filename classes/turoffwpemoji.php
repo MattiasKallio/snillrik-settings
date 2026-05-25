@@ -66,7 +66,7 @@ class SNSET_Emojis extends SNSET_SettingItem
     public function disable_emojis_remove_dns_prefetch($urls, $relation_type)
     {
         if ('dns-prefetch' == $relation_type) {
-            $emoji_svg_url = apply_filters('emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/');
+            $emoji_svg_url = apply_filters('snillrik_settings_emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/');
             $urls = array_diff($urls, array($emoji_svg_url));
         }
         return $urls;
